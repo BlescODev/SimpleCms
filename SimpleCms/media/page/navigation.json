@@ -1,0 +1,28 @@
+[
+  {
+    "title": "First",
+    "url": "content"
+  },
+  {
+    "title": "Second",
+    "url": "content2",
+    "sub": [
+      {
+        "title": "Sub1",
+        "url": "sub1"
+      },
+      {
+        "title": "Sub2",
+        "url": "sub2"
+      },
+      {
+        "title": "Sub3",
+        "url": "sub3"
+      }
+    ]
+  },
+  {
+    "title": "Third",
+    "url": "random-page-name"
+  }
+]

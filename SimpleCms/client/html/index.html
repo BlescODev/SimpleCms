@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="jsonToHtmlApp">
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+        <script src="js/lib/angular-1.4.7/angular.min.js"></script>
+        <script src="js/lib/angular-1.4.7/angular-route.min.js"></script>
+        <script src="js/lib/angular-1.4.7/angular-sanitize.min.js"></script>
+        <script src="js/lib/angular-1.4.7/angular-animate.min.js"></script>
+        <script src="js/services/app.js"></script>
+        <script src="js/services/jsonService.js"></script>
+        <script src="js/controllers/headerCtrl.js"></script>
+        <script src="js/controllers/contentCtrl.js"></script>
+        <script src="js/controllers/addPageCtrl.js"></script>
+
+        <title>JSON to HTML</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header" ng-controller="headerCtrl">
+                <div id="header-inner">
+                    <div id="navigation">
+                        <ul>
+                            <li ng-repeat="navElement in navElements">
+                                <a href="#/{{navElement.url}}">{{navElement.title}}</a>
+                                <ul>
+                                    <li ng-repeat="subElement in navElement.sub">
+                                        <a href="#/{{navElement.url}}/{{subElement.url}}">{{subElement.title}}</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#/add-page">Neue Seite</a>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div ng-view id="view"></div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+@import "variables"
+@import "mixins"
+@import "extendables"
+
+*
+  margin: 0
+  padding: 0
+  position: relative
+
+body
+  color: $color
+  font-family: $font
+
+#container
+  padding-bottom: 200px
+  padding-top: 200px
+  background-color: whitesmoke
+  min-height: 100vh
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, .2)
+
+@import "header"
+@import "content"

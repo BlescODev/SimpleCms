@@ -1,0 +1,51 @@
+<div id="content">
+    <div class="post animate-repeat" ng-repeat="post in posts" ng-hide="post.title == ''">
+        <!-- Parent Post Content -->
+        <div class="post-title" ng-hide="post.title == ''">
+            <h1>{{post.title}}</h1>
+        </div>
+        <div class="post-images" ng-hide="post.imgs.length == 0">
+            <div class="post-image" ng-repeat="image in post.imgs" ng-hide="image.url == ''">
+                <div class="post-image-background" style="background-image: url('{{image.url}}')"></div>
+                <img ng-src="{{image.url}}" alt="{{image.alt}}"/>
+            </div>
+        </div>
+        <div class="post-content" ng-bind-html="post.content" ng-hide="post.content == ''">
+        </div>
+
+        <!-- Second Layer Content -->
+        <div class="post-second-layer" ng-repeat="secondLayer in post.secondLayer" ng-hide="secondLayer.title == ''">
+            <div class="post-images" ng-hide="secondLayer.imgs.length == 0">
+                <div class="post-image" ng-repeat="image in secondLayer.imgs" ng-hide="image.url == ''">
+                    <div class="post-image-background" style="background-image: url('{{image.url}}')"></div>
+                    <img ng-src="{{image.url}}" alt="{{image.alt}}"/>
+                </div>
+            </div>
+            <div class="post-content-container">
+                <div class="post-title">
+                    <h2>{{secondLayer.title}}</h2>
+                </div>
+                <div class="post-content" ng-bind-html="secondLayer.content" ng-hide="secondLayer.content == ''">
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <!-- Third Layer Content -->
+        <div class="post-third-layer" ng-repeat="thirdLayer in post.thirdLayer" ng-hide="thirdLayer.title == ''">
+            <div class="post-title">
+                <h3>{{thirdLayer.title}}</h3>
+            </div>
+            <div class="post-images" ng-hide="thirdLayer.imgs.length == 0">
+                <div class="post-image" ng-repeat="image in thirdLayer.imgs" ng-hide="image.url == ''">
+                    <div class="post-image-background" style="background-image: url('{{image.url}}')"></div>
+                    <img ng-src="{{image.url}}" alt="{{image.alt}}"/>
+                </div>
+            </div>
+            <div class="post-content" ng-bind-html="thirdLayer.content" ng-hide="thirdLayer.content == ''">
+            </div>
+        </div>
+        <div class="clear"></div>
+
+    </div>
+</div>

@@ -1,0 +1,259 @@
+$border-color: lighten(lightgray, 8)
+$padding: 40px
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave
+  transition: all ease .5s
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter
+  opacity: 0
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active
+  opacity: 1
+
+
+#content
+  @extend .center-content
+  min-width: $min-width
+  max-width: $max-width
+  overflow-x: hidden
+
+// Parent Layer
+.post
+  @extend .white-box
+  min-height: 100px
+  max-width: 100%
+  background-color: white
+  padding: $padding
+  margin-bottom: 60px
+
+  .post-title
+    margin-top: -$padding
+    margin-left: -$padding
+    padding: $padding
+    //background-color: #4785F4
+    //color: white
+    width: 100%
+    //margin-bottom: $padding * 2
+
+  .post-images
+    width: 100%
+
+    .post-image
+      max-height: 500px
+      position: relative
+      min-height: 200px
+      overflow: hidden
+      text-align: center
+      width: calc(100% + #{2 * $padding})
+      margin-left: -$padding
+      box-shadow: 0 0 7px 0 rgba(0, 0, 0, .2)
+
+      img
+        margin: auto
+
+      .post-image-background
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        margin: auto
+        opacity: .7
+        background-position: top center
+        background-size: cover
+        background-repeat: no-repeat
+        $blur-radius: 10px
+        filter: blur($blur-radius)
+        -webkit-filter: blur($blur-radius)
+        -moz-filter: blur($blur-radius)
+        -o-filter: blur($blur-radius)
+        -ms-filter: blur($blur-radius)
+
+  .post-content
+    line-height: 25px
+    margin-top: $padding
+    margin-bottom: $padding
+    padding: 0 0 $padding 0
+    width: 100%
+    border-bottom: 1px solid $border-color
+
+// Second Layer
+.post-second-layer
+  max-width: calc(100% + 60px)
+  margin-bottom: $padding
+  padding-bottom: $padding
+  border-bottom: 1px solid $border-color
+
+  .post-content-container
+    min-width: calc(60% - #{$padding})
+    max-width: calc(60% - #{$padding})
+
+    .post-title
+      margin-top: 0
+      margin-left: 0
+      padding: 0
+      color: $color
+      background-color: transparent
+      width: 100%
+      margin-bottom: $padding
+
+    .post-content
+      width: 100%
+      margin-top: $padding
+      margin-bottom: $padding
+      padding: 0 0 $padding 0
+      border: 0
+
+  .post-images
+    max-width: 40%
+
+    .post-image
+      max-height: 300px
+      text-align: center
+      width: 100%
+      margin-left: 0
+      margin-bottom: 0
+
+  &:nth-child(odd)
+    .post-content-container
+      float: right
+      margin-left: $padding
+      
+    .post-images
+      float: left
+
+  &:nth-child(even)
+    .post-content-container
+      float: left
+      margin-right: $padding
+
+    .post-images
+      float: right
+
+// Third Layer
+.post-third-layer
+  $padding-mod: 1.5
+
+  box-shadow: 0 0 7px 0 rgba(0,0,0,.2)
+  min-width: calc(32% - #{2 * ($padding / $padding-mod)})
+  max-width: calc(32% - #{2 * ($padding / $padding-mod)})
+  padding: $padding / $padding-mod
+  margin-bottom: $padding / $padding-mod
+  float: left
+  margin-left: 0.65%
+  margin-right: 0.65%
+
+  .post-title
+    color: $color
+    margin-top: 0
+    margin-left: 0
+    padding: 0
+    background-color: transparent
+    text-align: center
+    width: 100%
+    margin-bottom: $padding / $padding-mod
+
+  .post-images
+    width: 100%
+
+    .post-image
+      padding-top: 0
+      padding-bottom: 0
+      text-align: center
+      width: 100%
+      max-height: 200px
+      margin-left: 0
+      box-shadow: none
+      background-color: transparent
+
+      img
+        max-height: inherit
+
+  .post-content
+    margin-top: $padding / $padding-mod
+    margin-bottom: 0
+    padding: 0 0 $padding / $padding-mod 0
+    width: 100%
+    border-bottom: 0
+
+#add-new-page
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2)
+  min-height: 300px
+
+  #url, #title
+    width: 100%
+    padding-left: $padding
+    padding-right: $padding
+    background-color: white
+
+    input
+      font-size: 20px
+      border-radius: 5px
+      border: 1px solid lightgray
+      padding: 10px
+      height: 20px
+      width: calc(100% - #{2 * $padding} - 20px)
+      outline: 0
+
+      &:focus
+        border: 1px solid dodgerblue
+
+  #url
+    padding-top: $padding
+    padding-bottom: $padding / 3
+
+  #title
+    padding-top: $padding / 3
+    padding-bottom: $padding
+    border-bottom: 1px solid whitesmoke
+
+  #page-content
+    position: relative
+    z-index: 9
+    background-color: white
+    width: calc(100% - #{2 * $padding} - 2px)
+    margin-left: 1px
+    min-height: 200px
+    padding: $padding
+    border-bottom: 1px solid whitesmoke
+
+    &:focus
+      outline: 1px solid dodgerblue
+
+  #toolbar
+    background-color: white
+    height: 70px
+
+    #save
+      color: dodgerblue
+      float: left
+      margin-left: $padding
+
+      &:hover
+        color: darken(dodgerblue, 15)
+
+    #delete
+      color: red
+      float: right
+      margin-right: $padding
+
+      &:hover
+        color: darken(red, 15)
+
+    #save, #delete
+      cursor: pointer
+      background-color: transparent
+      border: 0
+      line-height: 70px
+      font-size: 15px
+      outline: 0
+
+      &:active
+        color: black
+
