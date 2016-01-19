@@ -6,24 +6,18 @@ app.config(['$routeProvider', function ($routeProvider) {
             controller: 'addPageCtrl',
             templateUrl: 'html/views/new-page.tpl.html'
         })
-        .when('/:content', {
-            controller: 'contentCtrl',
-            templateUrl: 'html/views/home.tpl.html'
-        })
-        .when('/:content/:subcontent', {
-            controller: 'contentCtrl',
-            templateUrl: 'html/views/home.tpl.html'
-        })
         .otherwise({
-            redirectTo: '/'
+            controller: 'contentCtrl',
+            templateUrl: 'html/view/content.tpl.html'
         });
 }]);
 
 app.service('appService', ['$q', '$location', function($q, $location){
 
-    var properties = [];
-    properties["location"] = "http://"+ $location.host() + ":" + $location.port() + "/";
-
+    var properties = []
+    properties["location"] = "http://"+ $location.host() + ":" + $location.port() + "/"
+    properties["main"] = "home"
+    
     return {
         ready: function (callback) {
             if(typeof callback === 'function'){

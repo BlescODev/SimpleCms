@@ -3,10 +3,11 @@ app.controller('contentCtrl', ['appService', 'jsonService', '$scope', '$routePar
     var init = function () {
         var contentName = "";
 
-        if($routeParams.subcontent && $routeParams.content){
-            contentName = $routeParams.content + '/' + $routeParams.subcontent;
-        } else if ($routeParams.content) {
-            contentName = $routeParams.content + '/' + $routeParams.content;
+        if ($routeParams.content) {
+            contentName = $routeParams.content;
+        }
+        else {
+        	contentName = appService.get('main')
         }
 
         jsonService.getContent(contentName).then(function (data) {
