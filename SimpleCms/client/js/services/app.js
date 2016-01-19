@@ -8,7 +8,7 @@ app.config(['$routeProvider', function ($routeProvider) {
         })
         .otherwise({
             controller: 'contentCtrl',
-            templateUrl: 'html/view/content.tpl.html'
+            templateUrl: 'html/views/content.tpl.html'
         });
 }]);
 
