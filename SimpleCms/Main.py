@@ -4,6 +4,7 @@ from ch.blesc.application.services.HtmlResource import HtmlResource
 from ch.blesc.application.services.JavaScriptResource import JavaScriptResource
 from ch.blesc.media.MediaResource import MediaResource
 from ch.blesc.page.PageResource import PageResource
+from ch.blesc.persistence.SqliteContentRepository import SqliteContentRepository
 from ch.blesc.application.services.CssResource import CssResource
 
 
@@ -30,5 +31,5 @@ if __name__ == '__main__':
     api.add_resource(JavaScriptResource, '/js/<path:route>')
     api.add_resource(HtmlResource, '/html/<path:route>')
     api.add_resource(CssResource, '/css/<path:route>')
-    
+
     app.run("0.0.0.0", 8080)

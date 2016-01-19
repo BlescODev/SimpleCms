@@ -1,5 +1,4 @@
 from flask_restful import Resource
-from ch.blesc.page.PageRepository import PageRepository
 from flask.globals import request
 import json
 
