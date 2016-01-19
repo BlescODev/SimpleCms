@@ -5,8 +5,8 @@ import json
 
 class PageResource(Resource):
     
-    def __init__(self):
-        self.pageRepository = PageRepository()
+    def __init__(self, pageRepository):
+        self.pageRepository = pageRepository
         
     def get(self, route):
         return self.toJson( self.pageRepository.get(route) )

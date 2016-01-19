@@ -20,7 +20,8 @@ if __name__ == '__main__':
     api.add_resource(ClientResource, '/')
     
     # content
-    api.add_resource(PageResource, '/page/<path:route>')
+    api.add_resource(PageResource, '/page/<path:route>',
+		resource_class_kwargs={'pageRepository': SqliteContentRepository("media/page/content.db")})
     
     # media
     api.add_resource(MediaResource, '/media/<path:route>')
