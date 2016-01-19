@@ -4,7 +4,8 @@ from ch.blesc.application.services.HtmlResource import HtmlResource
 from ch.blesc.application.services.JavaScriptResource import JavaScriptResource
 from ch.blesc.media.MediaResource import MediaResource
 from ch.blesc.page.PageResource import PageResource
-from ch.blesc.persistence.SqliteContentRepository import SqliteContentRepository
+#from ch.blesc.persistence.SqliteContentRepository import SqliteContentRepository
+from ch.blesc.persistence.InMemorryContentRepository import InMemorryContentRepository
 from ch.blesc.application.services.CssResource import CssResource
 
 
@@ -22,7 +23,8 @@ if __name__ == '__main__':
     
     # content
     api.add_resource(PageResource, '/page/<path:route>',
-		resource_class_kwargs={'pageRepository': SqliteContentRepository("media/page/content.db")})
+		resource_class_kwargs={'pageRepository': InMemorryContentRepository()})
+    # SqliteContentRepository("media/page/content.db")
     
     # media
     api.add_resource(MediaResource, '/media/<path:route>')

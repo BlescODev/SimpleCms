@@ -4,7 +4,7 @@
     "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     "imgs": [
       {
-        "url": "content/images/holi.jpg",
+        "url": "/media/image/holi.jpg",
         "alt": "First Image"
       }
     ],
@@ -14,7 +14,7 @@
         "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "imgs": [
           {
-            "url": "content/images/water-drop.jpg",
+            "url": "/media/image/water-drop.jpg",
             "alt": "Test"
           }
         ],
@@ -30,7 +30,7 @@
         "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "imgs": [
           {
-            "url": "content/images/woods.jpg",
+            "url": "/media/image/woods.jpg",
             "alt": "Test"
           }
         ],
@@ -46,7 +46,7 @@
         "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "imgs": [
           {
-            "url": "content/images/galaxy.jpg",
+            "url": "/media/image/galaxy.jpg",
             "alt": "Test"
           }
         ],
@@ -64,7 +64,7 @@
         "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "imgs": [
           {
-            "url": "content/images/html5.png",
+            "url": "/media/image/html5.png",
             "alt": "Test"
           }
         ],
@@ -80,7 +80,7 @@
         "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
         "imgs": [
           {
-            "url": "content/images/css3.png",
+            "url": "/media/image/css3.png",
             "alt": "Test"
           }
         ],
@@ -96,7 +96,7 @@
         "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "imgs": [
           {
-            "url": "content/images/javascript.png",
+            "url": "/media/image/javascript.png",
             "alt": "Test"
           }
         ],
@@ -121,7 +121,7 @@
         "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "imgs": [
           {
-            "url": "content/images/test.jpg",
+            "url": "/media/image/test.jpg",
             "alt": "Test"
           }
         ],
@@ -139,7 +139,7 @@
     "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     "imgs": [
       {
-        "url": "content/images/test.jpg",
+        "url": "/media/image/test.jpg",
         "alt": "Third Image"
       }
     ],
@@ -162,7 +162,7 @@
         "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
         "imgs": [
           {
-            "url": "content/images/test.jpg",
+            "url": "/media/image/test.jpg",
             "alt": "Test"
           }
         ],
@@ -178,7 +178,7 @@
         "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
         "imgs": [
           {
-            "url": "content/images/test.jpg",
+            "url": "/media/image/test.jpg",
             "alt": "Test"
           }
         ],

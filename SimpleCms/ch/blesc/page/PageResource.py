@@ -8,7 +8,8 @@ class PageResource(Resource):
         self.pageRepository = pageRepository
         
     def get(self, route):
-        return self.toJson( self.pageRepository.get(route) )
+        page = self.pageRepository.get(route)
+        return self.toJson( page )
     
     def post(self, route):
         content = request.form['page']
