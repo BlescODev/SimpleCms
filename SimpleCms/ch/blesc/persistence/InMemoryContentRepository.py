@@ -1,6 +1,6 @@
 from flask_restful import Resource
 
-class InMemorryContentRepository(Resource):
+class InMemoryContentRepository(Resource):
     
     def __init__(self):
         self.pages = {
