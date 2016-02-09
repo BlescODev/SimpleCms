@@ -1,16 +1,17 @@
-app.controller('contentCtrl', ['appService', 'jsonService', '$scope', '$routeParams', function(appService, jsonService, $scope, $routeParams){
+app.controller('contentCtrl', ['appService', 'jsonService', '$scope', '$location', function(appService, jsonService, $scope, $location){
 
     var init = function () {
-        var contentName = "";
+        var url = $location.url()
 
-        if ($routeParams.content) {
-            contentName = $routeParams.content;
-        }
-        else {
-        	contentName = appService.get('main')
-        }
+	console.log(url)
 
-        jsonService.getContent(contentName).then(function (data) {
+        if (!url || url == '/') {
+            url = appService.get('main')
+        }
+	
+	url = url.substr(1)
+
+        jsonService.getContent(url).then(function (data) {
             $scope.posts = data;
         }, function (errorMsg) {
             console.error(errorMsg);

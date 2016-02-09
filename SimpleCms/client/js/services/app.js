@@ -16,7 +16,7 @@ app.service('appService', ['$q', '$location', function($q, $location){
 
     var properties = []
     properties["location"] = "http://"+ $location.host() + ":" + $location.port() + "/"
-    properties["main"] = "home"
+    properties["main"] = "/home"
     
     return {
         ready: function (callback) {
