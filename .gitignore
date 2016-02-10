@@ -109,4 +109,5 @@ docs/_build/
 # PyBuilder
 target/
 
-
+#SimpleCms personal data
+data/
