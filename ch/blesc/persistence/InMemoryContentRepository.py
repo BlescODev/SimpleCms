@@ -4,8 +4,8 @@ class InMemoryContentRepository(Resource):
     
     def __init__(self):
         self.pages = {
-                "navigation" : open("media/page/navigation.json", 'r').read(),
-                "home" : open("media/page/home.json", 'r').read()}
+                "navigation" : open("data/navigation.json", 'r').read(),
+                "index" : open("data/index.json", 'r').read()}
     
     def get(self, route):
         return self.pages[route]
