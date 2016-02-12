@@ -1,6 +1,6 @@
 import sqlite3
 
-class SqliteContentRepository:
+class SqlitePageRepository:
     _table = "content"
     _route = "route"
     _json = "json"

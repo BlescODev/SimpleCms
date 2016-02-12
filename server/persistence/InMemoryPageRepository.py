@@ -1,11 +1,11 @@
 from flask_restful import Resource
 
-class InMemoryContentRepository(Resource):
+class InMemoryPageRepository(Resource):
     
     def __init__(self):
         self.pages = {
-                "navigation" : open("data/navigation.json", 'r').read(),
-                "index" : open("data/index.json", 'r').read()}
+                "navigation" : open("../data/navigation.json", 'r').read(),
+                "index" : open("../data/index.json", 'r').read()}
     
     def get(self, route):
         return self.pages[route]
