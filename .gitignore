@@ -110,4 +110,4 @@ docs/_build/
 target/
 
 #SimpleCms personal data
-data/
+*.db
