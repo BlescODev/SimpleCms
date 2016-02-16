@@ -8,6 +8,7 @@ from persistence.InMemoryPageRepository import InMemoryPageRepository
 
 from services.ApiService import ApiService
 from services.AuthenticationService import AuthenticationService
+from services.AccountService import AccountService
 
 import sys, getopt
 
@@ -31,7 +32,8 @@ def main(argv):
 
 	if (key == ''):
 		key = str(uuid4().hex)
-	AuthenticationService(app, key)
+	accountService = AccountService("defaultSettings","settingsPersistence")
+	AuthenticationService(app, accountService, key)
 	# SqlitePageRepository("../data/content.db")
 
 	app.run("0.0.0.0", 8080, debug=True)
