@@ -65,7 +65,8 @@ body {
   line-height: 100px;
   margin-left: 50px;
   margin-right: 50px;
-  font-size: 30px;
+  font-size: 25px;
+  cursor: pointer;
   float: left;
   transition: line-height ease .5s;
 }

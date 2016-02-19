@@ -1,15 +1,13 @@
-app.controller('contentCtrl', ['appService', 'jsonService', '$scope', '$location', function(appService, jsonService, $scope, $location){
+app.controller('contentCtrl', ['appService', 'jsonService', '$scope', function(appService, jsonService, $scope){
 
     var init = function () {
-        var url = $location.url()
-
-	console.log(url)
+        var url = appService.$location.url();
 
         if (!url || url == '/') {
-            url = appService.get('main')
+            url = appService.get('main');
         }
 	
-	url = url.substr(1)
+	    url = url.substr(1);
 
         jsonService.getContent(url).then(function (data) {
             $scope.posts = data;

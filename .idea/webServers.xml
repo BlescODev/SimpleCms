@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4072809f-b9fd-4292-bfdc-b84511a06f38" name="DigitalOcean" url="http://46.101.164.194">
+        <fileTransfer host="46.101.164.194" port="22" rootFolder="/var/www" accessType="SFTP" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

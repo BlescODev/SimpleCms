@@ -1,5 +1,6 @@
-app.controller('headerCtrl', ['appService', '$scope', 'jsonService', function (appService, $scope, jsonService) {
+app.controller('headerCtrl', ['appService', '$scope', 'jsonService', 'user', function (appService, $scope, jsonService, user) {
 
+    //$scope.loginText = "Login";
     $scope.scrolled = false;
 
     var init = function () {
@@ -16,5 +17,14 @@ app.controller('headerCtrl', ['appService', '$scope', 'jsonService', function (a
         $scope.scrolled = window.pageYOffset != 0;
         $scope.$apply();
     });
+
+    $scope.isAuthenticated = function () {
+        return user.isLoggedIn();
+    };
+
+    $scope.logout = function () {
+        user.logout();
+        appService.$location.url("/login")
+    };
 
 }]);
