@@ -19,7 +19,7 @@
 }
 
 body {
-  color: #777;
+  color: black;
   font-family: "Verdana", sans-serif;
 }
 
@@ -27,6 +27,7 @@ body {
   padding-bottom: 200px;
   padding-top: 200px;
   background-color: whitesmoke;
+  background-size: 20px 20px;
   min-height: 100vh;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
 }
@@ -38,6 +39,10 @@ body {
   z-index: 10;
   width: 100%;
   max-height: 100px;
+}
+
+#header.scrolled #header-inner #navigation ul li {
+  line-height: 60px;
 }
 
 #header #header-inner {
@@ -62,6 +67,7 @@ body {
   margin-right: 50px;
   font-size: 30px;
   float: left;
+  transition: line-height ease .5s;
 }
 
 #header #header-inner #navigation ul li:hover ul {
@@ -111,7 +117,7 @@ body {
 .animate-repeat.ng-move,
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leave {
-  transition: all ease 0.5s;
+  transition: all ease .5s;
 }
 
 .animate-repeat.ng-leave.ng-leave-active,
@@ -209,7 +215,7 @@ body {
   margin-top: 0;
   margin-left: 0;
   padding: 0;
-  color: #777;
+  color: black;
   background-color: transparent;
   width: 100%;
   margin-bottom: 40px;
@@ -265,7 +271,7 @@ body {
 }
 
 .post-third-layer .post-title {
-  color: #777;
+  color: black;
   margin-top: 0;
   margin-left: 0;
   padding: 0;
@@ -392,4 +398,152 @@ body {
   color: black;
 }
 
-/*# sourceMappingURL=style.css.map */
+#login {
+  max-width: 1200px;
+  min-width: 920px;
+  margin: auto;
+}
+
+#login #login-form {
+  position: relative;
+  padding: 40px;
+  background-color: white;
+  width: 50%;
+  margin: auto;
+  min-height: 600px;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.2);
+}
+
+#login #login-form #title-row #login-form-title {
+  position: relative;
+  width: 30%;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  padding-top: 30%;
+}
+
+#login #login-form #title-row #login-form-title #login-form-title-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 50%;
+  border: 2px dashed lightgray;
+  padding-top: 100%;
+}
+
+#login #login-form #title-row #login-form-title h1 {
+  display: block;
+  font-size: 30px;
+  line-height: 30px;
+  position: absolute;
+  top: -30px;
+  color: black;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 0;
+  font-weight: 100;
+}
+
+#login #login-form label {
+  display: inline-block;
+  width: 30%;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: left !important;
+}
+
+#login #login-form input {
+  line-height: 30px;
+  display: inline-block;
+  width: 50%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 26px;
+  padding: 2px 5px;
+  outline: 0;
+}
+
+#login #login-form input.error {
+  border: 1px solid crimson;
+}
+
+#login #login-form input:focus {
+  border: 1px solid deepskyblue;
+}
+
+#login #login-form #username-row {
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+#login #login-form #password-row {
+  text-align: center;
+}
+
+#login #login-form #button-row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  width: 80%;
+  margin: auto;
+}
+
+#login #login-form #button-row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#login #login-form #button-row #login-button, #login #login-form #button-row #reset-button {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  max-width: calc(49% - 20px);
+  width: 100%;
+  float: left;
+  text-align: center;
+  border: 1px solid lightgray;
+  border-bottom: 3px solid lightgray;
+  border-radius: 5px;
+  padding: 10px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 20px;
+  outline: 0;
+}
+
+#login #login-form #button-row #login-button:hover .button-circle, #login #login-form #button-row #login-button:focus .button-circle, #login #login-form #button-row #reset-button:hover .button-circle, #login #login-form #button-row #reset-button:focus .button-circle {
+  padding-top: calc(100% + 40px);
+  opacity: 1;
+  border-radius: 0;
+}
+
+#login #login-form #button-row #login-button .button-circle, #login #login-form #button-row #reset-button .button-circle {
+  transition: all ease .8s;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: -50% auto;
+  height: 0;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+#login #login-form #button-row #reset-button {
+  margin-left: calc(2% - 4px);
+}

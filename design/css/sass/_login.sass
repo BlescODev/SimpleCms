@@ -1,0 +1,136 @@
+#login
+  max-width: $max-width
+  min-width: $min-width
+  margin: auto
+
+  #login-form
+    position: relative
+    padding: $padding
+    background-color: white
+    width: 50%
+    margin: auto
+    min-height: 600px
+    box-shadow: 0 5px 7px rgba(0,0,0,.2)
+
+    #title-row
+      //border-bottom: 1px solid lightgray
+
+      #login-form-title
+        position: relative
+        width: 30%
+        margin: 0 auto $padding auto
+        text-align: center
+        padding-top: 30%
+
+        #login-form-title-background
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          margin: auto
+          border-radius: 50%
+          //background-color: whitesmoke
+          border: 2px dashed lightgray
+          padding-top: 100%
+
+        h1
+          display: block
+          font-size: 30px
+          line-height: 30px
+          position: absolute
+          top: -30px
+          color: $color
+          left: 0
+          right: 0
+          bottom: 0
+          margin: auto
+          height: 0
+          font-weight: 100
+
+
+    label
+      display: inline-block
+      width: 30%
+      font-size: 25px
+      line-height: 30px
+      text-align: left !important
+
+    input
+      line-height: 30px
+      display: inline-block
+      width: 50%
+      border: 1px solid lightgray
+      border-radius: 5px
+      font-size: 26px
+      padding: 2px 5px
+      outline: 0
+
+      &.error
+        border: 1px solid crimson
+
+      &:focus
+        border: 1px solid deepskyblue
+
+    #username-row
+      text-align: center
+      margin-top: $padding * 2
+      margin-bottom: $padding
+
+    #password-row
+      text-align: center
+
+    #button-row
+      position: absolute
+      left: 0
+      right: 0
+      bottom: $padding
+      width: 80%
+      margin: auto
+
+      &::after
+        content: ""
+        display: block
+        clear: both
+
+      #login-button, #reset-button
+        +no-select()
+        max-width: calc(49% - 20px)
+        width: 100%
+        float: left
+        text-align: center
+        border: 1px solid lightgray
+        border-bottom: 3px solid lightgray
+        border-radius: 5px
+        padding: 10px
+        text-transform: uppercase
+        position: relative
+        overflow: hidden
+        cursor: pointer
+        font-size: 20px
+        outline: 0
+
+        &:hover, &:focus
+
+          .button-circle
+            padding-top: calc(100% + 40px)
+            opacity: 1
+            border-radius: 0
+
+        .button-circle
+          transition: all ease .8s
+          background-color: whitesmoke
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          margin: -50% auto
+          height: 0
+          border-radius: 50%
+          opacity: 0
+
+      #reset-button
+        margin-left: calc(2% - 4px)
+
+

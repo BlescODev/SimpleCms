@@ -4,19 +4,49 @@ app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/add-page', {
             controller: 'addPageCtrl',
-            templateUrl: 'html/views/new-page.tpl.html'
+            templateUrl: 'views/new-page.tpl.html',
+            resolve: function (user) {
+                return user.isLoggedIn();
+            }
+        })
+        .when('/login', {
+            controller: 'loginCtrl',
+            templateUrl: 'views/login.tpl.html'
         })
         .otherwise({
             controller: 'contentCtrl',
-            templateUrl: 'html/views/content.tpl.html'
+            templateUrl: 'views/content.tpl.html'
         });
 }]);
 
-app.service('appService', ['$q', '$location', function($q, $location){
+app.service('appService', ['$q', '$location', '$http', function($q, $location, $http){
 
-    var properties = []
-    properties["location"] = "http://"+ $location.host() + ":" + $location.port() + "/"
-    properties["main"] = "/index"
+    var properties = [];
+    properties["location"] = "http://"+ $location.host() + ":" + $location.port() + "/";
+    properties["main"] = "/index";
+    properties["blesc"] = "http://blesc.ch:8080";
+
+    var httpRequest = function (url, data, success, error) {
+
+        $http({
+            method: "POST",
+            url: url,
+            headers: {
+                'Content-type': 'application/json'
+            },
+            data: data
+        })
+            .then(function (response) {
+                if(typeof success === 'function'){
+                    success(response);
+                }
+            }, function (response) {
+                if(typeof error === 'function'){
+                    error(response);
+                }
+            });
+
+    };
     
     return {
         ready: function (callback) {
@@ -26,6 +56,9 @@ app.service('appService', ['$q', '$location', function($q, $location){
         },
         get: function (property) {
             return properties[property];
+        },
+        http: function (url, data, success, error) {
+            httpRequest(url, data, success, error);
         }
     }
 }]);

@@ -1,0 +1,35 @@
+<div id="login">
+    <div id="login-form">
+        <div id="title-row">
+            <div id="login-form-title">
+                <div id="login-form-title-background">
+                    <h1>Login</h1>
+                </div>
+            </div>
+        </div>
+        <div id="username-row">
+            <label for="login-username">
+                Username
+            </label>
+            <input id="login-username" type="text" ng-model="loginInfo.username" tabindex="1" autofocus ng-class="{'error': errors.username}" />
+        </div>
+        <div id="password-row">
+            <label for="login-password">
+                Password
+            </label>
+            <input id="login-password" type="password" ng-model="loginInfo.password" tabindex="2" ng-class="{'error': errors.password}"/>
+        </div>
+        <div id="button-row">
+            <div id="login-button" role="button" tabindex="3" ng-click="login()">
+                <div class="button-circle"></div>
+                <span>Login</span>
+            </div>
+
+            <div id="reset-button" role="button" tabindex="4" ng-click="reset()">
+                <div class="button-circle"></div>
+                <span>Reset</span>
+            </div>
+
+        </div>
+    </div>
+</div>
