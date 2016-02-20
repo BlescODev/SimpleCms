@@ -19,6 +19,11 @@
             </label>
             <input id="login-password" type="password" ng-model="loginInfo.password" tabindex="2" ng-class="{'error': errors.password}"/>
         </div>
+        <div id="message-row">
+            <div ng-repeat="message in messages" class="message {{message.type}}">
+                <span>{{message.message}}</span>
+            </div>
+        </div>
         <div id="button-row">
             <div id="login-button" role="button" tabindex="3" ng-click="login()">
                 <div class="button-circle"></div>

@@ -16,7 +16,7 @@
         <script src="js/controllers/addPageCtrl.js"></script>
         <script src="js/controllers/loginCtrl.js"></script>
 
-        <title>JSON to HTML</title>
+        <title>SimpleCms</title>
     </head>
     <body>
         <div id="container">
@@ -33,13 +33,24 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#/add-page">Neue Seite</a>
-                            </li>
-                            <li ng-if="!isAuthenticated()">
-                                <a href="#/login">Login</a>
-                            </li>
-                            <li ng-if="isAuthenticated()">
-                                <a ng-click="logout()">Logout</a>
+                                <a>SimpleCms</a>
+                                <ul>
+                                    <li ng-if="isAuthenticated()">
+                                        <a href="#/add-page">Edit Page</a>
+                                    </li>
+                                    <li ng-if="isAuthenticated()">
+                                        <a href="">Pages</a>
+                                    </li>
+                                    <li ng-if="isAuthenticated()">
+                                        <a href="#/add-page">Settings</a>
+                                    </li>
+                                    <li ng-if="!isAuthenticated()">
+                                        <a href="#/login">Login</a>
+                                    </li>
+                                    <li ng-if="isAuthenticated()">
+                                        <a ng-click="logout()">Logout</a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                         <div class="clear"></div>
