@@ -3,14 +3,13 @@ from werkzeug.security import safe_str_cmp
 from models.User import User
 
 class AccountService(object):
-	def __init__(self, defaultConfigRepository, configRepository):
-		self.defaultConfigRepository = defaultConfigRepository 
-		self.configRepository = configRepository
-		self.users = {User(1, "simpleAdmin", "ThisIsAnInsecurePassword;ItMustBeReplaced")}
+	def __init__(self, accountSettingsService):
+		self.users = list()
+		self.add(accountSettingsService.getDefaultAccount())
 
 	def getByName(self, name):		
 		for user in self.users:
-			if(safe_str_cmp(user.name.encode('utf-8'), name.encode('utf-8')) ):
+			if user.name == name:
 				return user
 		return None
 
@@ -25,10 +24,3 @@ class AccountService(object):
 
 	def update(self, user):
 		pass
-
-	def getPasswordPolicy(self):
-		"""
-		We want our CMS to be as customizable as possible.
-		We want our CMS to be as secure as possible.
-		"""
-

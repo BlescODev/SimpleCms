@@ -8,7 +8,7 @@ class AuthenticationService(object):
 
 	def authenticate(self, name, password):
 		user = self.accountService.getByName(name)
-		if user.check_password(password):
+		if user.password.verify(password):
 			return user
 		return None
 

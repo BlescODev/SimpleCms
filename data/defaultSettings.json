@@ -1,0 +1,11 @@
+{
+    "defaultUserName": "simpleAdmin",
+    "defaultUserPassword": "ThisIsAnInsecurePassword;ItMustBeReplaced123",
+    "passwordSecuritySaltSize": "16",
+    "passwordSecurityRounds": "29000",
+    "passwordMinLength": "12",
+    "passwordNeedsLowercase": "True",
+    "passwordNeedsUppercase": "True",
+    "passwordNeedsNumbers": "True",
+    "passwordNeedsSepcial": "True"
+}
