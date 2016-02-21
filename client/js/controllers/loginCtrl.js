@@ -14,6 +14,8 @@ app.controller('loginCtrl', ['appService', 'user', '$scope', function (appServic
 
     $scope.login = function () {
 
+        $scope.messages = [];
+
         $scope.errors.username = (!$scope.loginInfo.username);
         $scope.errors.password = (!$scope.loginInfo.password);
 
@@ -24,19 +26,36 @@ app.controller('loginCtrl', ['appService', 'user', '$scope', function (appServic
                 appService.$location.url('/');
 
             }).catch(function (response) {
-                $scope.error.username = true;
-                $scope.error.password = true;
+                $scope.errors.username = true;
+                $scope.errors.password = true;
 
-                $scope.messages.push({
-                    type: "error",
-                    message: "Failed to login!"
-                })
+                $scope.messages = [];
+
+                if(response.status == 401){
+                    $scope.messages.push({
+                        type: "error",
+                        message: "Username or password is wrong!"
+                    });
+                } else {
+                    $scope.messages.push({
+                        type: "error",
+                        message: "The Server seems to be unavailable!"
+                    });
+                }
+            });
+        } else {
+            $scope.messages.push({
+                type: "error",
+                message: "Please enter all information!"
             });
         }
+
+        // ThisIsAnInsecurePassword;ItMustBeReplaced
 
     };
 
     $scope.reset = function () {
+        $scope.messages = [];
         $scope.loginInfo = {};
         $scope.errors = {
             username: false,
