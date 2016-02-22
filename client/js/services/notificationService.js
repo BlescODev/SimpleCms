@@ -38,13 +38,6 @@ app.service('notificationService', [function ($q) {
         close: function () {
             notifications.splice(0, 1);
             notifyObservers();
-        },
-        getNewest: function () {
-            if(notifications.length > 0){
-                return notifications[0];
-            } else {
-                return {};
-            }
         }
     }
 
