@@ -9,10 +9,17 @@ app.controller('contentCtrl', ['appService', 'jsonService', '$scope', function(a
 	
 	    url = url.substr(1);
 
-        jsonService.getContent(url).then(function (data) {
-            $scope.posts = data;
-        }, function (errorMsg) {
-            console.error(errorMsg);
+        jsonService.getContent(url).then(function (response) {
+            $scope.posts = response.data;
+        }, function (response) {
+            if(response.status == 404){
+                appService.$location.url('/404');
+            } else if (response.status == 500) {
+                appService.notifications.queue({
+                    message: "The server is experiencing some problems at the moment. Sorry!",
+                    type: "error"
+                });
+            }
         });
     };
 

@@ -9,8 +9,10 @@
         <script src="js/libraries/angular-1.4.7/angular-animate.min.js"></script>
         <script src="js/libraries/satellizer-0.13.4/satellizer.min.js"></script>
         <script src="js/services/app.js"></script>
+        <script src="js/services/notificationService.js"></script>
         <script src="js/services/jsonService.js"></script>
         <script src="js/services/userService.js"></script>
+        <script src="js/controllers/notificationCtrl.js"></script>
         <script src="js/controllers/headerCtrl.js"></script>
         <script src="js/controllers/contentCtrl.js"></script>
         <script src="js/controllers/addPageCtrl.js"></script>
@@ -20,6 +22,19 @@
     </head>
     <body>
         <div id="container">
+            <div id="notifications" ng-controller="notificationCtrl" ng-class="{'visible': visible}">
+                <div class="notification {{current.type}}">
+                    <div class="notification-inner">
+
+                        <span ng-bind-html="current.message"></span>
+
+                        <div class="close-cross" ng-click="close()">
+                            <div class="cross-horizontal"></div>
+                            <div class="cross-vertical"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="header" ng-controller="headerCtrl" ng-class="{'scrolled': scrolled}">
                 <div id="header-inner">
                     <div id="navigation">

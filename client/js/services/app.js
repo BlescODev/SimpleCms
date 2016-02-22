@@ -29,27 +29,37 @@ app.config(['$routeProvider', '$authProvider', function ($routeProvider, $authPr
             controller: 'loginCtrl',
             templateUrl: 'html/views/login.tpl.html'
         })
+        .when('/404', {
+            templateUrl: 'html/views/404.tpl.html'
+        })
         .otherwise({
             controller: 'contentCtrl',
             templateUrl: 'html/views/content.tpl.html'
         });
 }]);
 
-app.service('appService', ['$q', '$location', '$http', function($q, $location, $http){
+app.service('appService', ['$q', '$location', '$http', '$timeout', 'notificationService', function($q, $location, $http, $timeout, notificationService){
 
     var properties = [];
     properties["location"] = "http://"+ $location.host() + ":" + $location.port() + "/";
     properties["main"] = "/index";
 
-    var httpRequest = function (url, data, success, error) {
+    var httpRequest = function (method, url, data, success, error) {
+
+        var params = {};
+
+        if(method === "GET"){
+            params = data;
+        }
 
         $http({
-            method: "POST",
+            method: method,
             url: url,
             headers: {
                 'Content-type': 'application/json'
             },
-            data: data
+            data: data,
+            params: params
         })
             .then(function (response) {
                 if(typeof success === 'function'){
@@ -72,9 +82,11 @@ app.service('appService', ['$q', '$location', '$http', function($q, $location, $
         get: function (property) {
             return properties[property];
         },
-        http: function (url, data, success, error) {
-            httpRequest(url, data, success, error);
+        http: function (method, url, data, success, error) {
+            httpRequest(method, url, data, success, error);
         },
-        $location: $location
+        $location: $location,
+        $timeout: $timeout,
+        notifications: notificationService
     }
 }]);

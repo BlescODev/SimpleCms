@@ -4,10 +4,10 @@ app.controller('headerCtrl', ['appService', '$scope', 'jsonService', 'user', fun
     $scope.scrolled = false;
 
     var init = function () {
-        jsonService.getNavData().then(function (navData) {
-            $scope.navElements = navData;
-        }, function (errorMsg) {
-            console.error(errorMsg);
+        jsonService.getNavData().then(function (response) {
+            $scope.navElements = response.data;
+        }, function (response) {
+
         });
     };
 

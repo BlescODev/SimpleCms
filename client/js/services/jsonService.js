@@ -4,13 +4,11 @@ app.service('jsonService', ['appService', '$http', '$q', function(appService, $h
     var contentPromise;
 
     var retrieveJson = function (contentName, promise) {
-        $http.get(appService.get("location")+ 'page/'+ contentName)
-            .success(function (data) {
-                promise.resolve(data);
-            })
-            .error(function () {
-                promise.reject('failed to load the json for ' + contentName);
-            });
+        appService.http("GET", appService.get("location") + 'page/' + contentName, {}, function (response) {
+            promise.resolve(response);
+        }, function (response) {
+            promise.reject(response);
+        });
     };
 
     return {

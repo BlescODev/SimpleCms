@@ -32,6 +32,98 @@ body {
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
 }
 
+#four-o-four {
+  min-width: 920px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#four-o-four h1 {
+  font-size: 70px;
+  color: lightgray;
+  padding: 50px;
+}
+
+#notifications {
+  position: fixed;
+  top: -50px;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  transition: transform ease 0.5s;
+}
+
+#notifications.visible {
+  transform: translate(0, 50px);
+}
+
+#notifications.visible + #header {
+  transform: translate(0, 50px);
+}
+
+#notifications .notification {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: deepskyblue;
+}
+
+#notifications .notification.error {
+  background-color: crimson;
+}
+
+#notifications .notification.success {
+  background-color: #2ebc2e;
+}
+
+#notifications .notification .notification-inner {
+  min-width: 920px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+#notifications .notification .notification-inner span {
+  color: white;
+  line-height: 50px;
+  font-size: 20px;
+}
+
+#notifications .notification .notification-inner .close-cross {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 25px;
+  width: 25px;
+  margin: auto;
+  transform: rotate(45deg);
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#notifications .notification .notification-inner .close-cross .cross-horizontal, #notifications .notification .notification-inner .close-cross .cross-vertical {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+#notifications .notification .notification-inner .close-cross .cross-horizontal {
+  width: 16px;
+  height: 2px;
+}
+
+#notifications .notification .notification-inner .close-cross .cross-vertical {
+  width: 2px;
+  height: 16px;
+}
+
 #header {
   position: fixed;
   top: 0;
@@ -39,6 +131,8 @@ body {
   z-index: 10;
   width: 100%;
   max-height: 100px;
+  transform: translate(0, 0);
+  transition: transform ease 0.5s;
 }
 
 #header.scrolled #header-inner #navigation ul li {
@@ -72,7 +166,7 @@ body {
   font-size: 25px;
   cursor: pointer;
   float: left;
-  transition: line-height ease 0.5s;
+  transition: line-height ease .5s;
 }
 
 #header #header-inner #navigation ul li:hover ul {
@@ -122,7 +216,7 @@ body {
 .animate-repeat.ng-move,
 .animate-repeat.ng-enter,
 .animate-repeat.ng-leave {
-  transition: all ease 0.5s;
+  transition: all ease .5s;
 }
 
 .animate-repeat.ng-leave.ng-leave-active,
@@ -548,7 +642,7 @@ body {
 }
 
 #login #login-form #button-row #login-button .button-circle, #login #login-form #button-row #reset-button .button-circle {
-  transition: all ease 0.8s;
+  transition: all ease .8s;
   background-color: whitesmoke;
   position: absolute;
   top: 0;

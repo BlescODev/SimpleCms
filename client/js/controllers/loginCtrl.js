@@ -23,6 +23,12 @@ app.controller('loginCtrl', ['appService', 'user', '$scope', function (appServic
             user.login($scope.loginInfo).then(function (response) {
                 $scope.loginInfo = {};
 
+                appService.notifications.queue({
+                    message: "Successfully logged in!",
+                    type: "success",
+                    time: 3000
+                });
+
                 appService.$location.url('/');
 
             }).catch(function (response) {
