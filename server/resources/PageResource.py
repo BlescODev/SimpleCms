@@ -10,6 +10,8 @@ class PageResource(Resource):
 
     def get(self, route):
         page = self.pageRepository.get(route)
+        if not page:
+            return {}, 404
         return self.toJson( page )
 
     @jwt_required()
