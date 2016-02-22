@@ -2,42 +2,44 @@ app.controller('notificationCtrl', ['appService', '$scope', function(appService,
 
     $scope.current = {};
 
-    var autoclose = function () {
-        if($scope.current.time){
+    var autoclose = function (notification) {
+        if(notification.time){
             appService.$timeout(function () {
-                $scope.close();
-            }, $scope.current.time);
+                $scope.close(notification);
+            }, notification.time);
         }
     };
 
     appService.ready(function () {
 
         appService.notifications.registerObserver(function (notification) {
-            if(!$scope.current.message){
+            if(notification){
                 $scope.current = notification;
                 $scope.visible = true;
-                autoclose();
+                if($scope.current.time) {
+                    autoclose(notification);
+                }
             }
         });
 
     });
 
+    $scope.close = function (notification) {
+        if(!notification){
+            notification = $scope.current;
+        }
 
-    $scope.close = function () {
-        $scope.visible = false;
+        if(angular.equals(notification, $scope.current)) {
+            $scope.visible = false;
+        }
 
         appService.$timeout(function () {
-            if($scope.current.callback){
-                if(typeof $scope.current.callback === 'function'){
-                    $scope.current.callback();
+            if(notification.callback){
+                if(typeof notification.callback === 'function'){
+                    notification.callback();
                 }
             }
             appService.notifications.close();
-            $scope.current = appService.notifications.getNewest();
-            autoclose();
-            if($scope.current.message){
-                $scope.visible = true;
-            }
         }, 500);
     };
 

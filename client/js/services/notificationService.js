@@ -35,8 +35,9 @@ app.service('notificationService', [function ($q) {
                 console.error("A notification must contain a message!");
             }
         },
-        close: function (notification) {
+        close: function () {
             notifications.splice(0, 1);
+            notifyObservers();
         },
         getNewest: function () {
             if(notifications.length > 0){

@@ -7,7 +7,10 @@ app.controller('headerCtrl', ['appService', '$scope', 'jsonService', 'user', fun
         jsonService.getNavData().then(function (response) {
             $scope.navElements = response.data;
         }, function (response) {
-
+            appService.notifications.queue({
+                message: "Unable to retrieve navigation data!",
+                type: "error"
+            });
         });
     };
 
