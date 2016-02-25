@@ -112,3 +112,5 @@ target/
 
 #SimpleCms personal data
 *.db
+*.key
+*.crt
