@@ -1,6 +1,9 @@
 {
+	"hostName": "0.0.0.0",
+
 	"defaultUserName": "simpleAdmin",
 	"defaultUserPassword": "ThisIsAnInsecurePassword;ItMustBeReplaced123",
+
 	"passwordSecuritySaltSize": "16",
 	"passwordSecurityRounds": "29000",
 	"passwordMinLength": "12",
@@ -8,11 +11,14 @@
 	"passwordNeedsUppercase": "True",
 	"passwordNeedsNumbers": "True",
 	"passwordNeedsSepcial": "True",
-	"hostName": "0.0.0.0",
+
 	"sslIsEnabled": "True",
 	"sslDefaultKeyPath": "ssl/default.key",
 	"sslKeyPath": "ssl/simpleCms.key",
-	"sslKeySize": "2048",
+	"sslKeySize": 2048,
 	"sslDefaultCertificatePath": "ssl/default.crt",
-	"sslCertificatePath": "ssl/simpleCms.crt"
+	"sslCertificatePath": "ssl/simpleCms.crt",
+	"sslCertificateSerialNumber": 0,
+	"sslCertificateLifeTime": 31536000,
+	"sslCertificateHashAlgorithm": "sha512"
 }

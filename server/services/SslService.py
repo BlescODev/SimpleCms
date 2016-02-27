@@ -19,7 +19,6 @@ class SslService(object):
 				if not isfile(keyFile):
 					keySize = self.sslSettingsService.getKeySize()
 					key = SslContextService.generateKey( keySize )
-					print (key)
 					SslContextService.writeKeyToFile( key, keyFile )
 
 			if not isfile(certificateFile):
