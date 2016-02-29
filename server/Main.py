@@ -8,7 +8,7 @@ from persistence.InMemoryPageRepository import InMemoryPageRepository
 from persistence.InMemorySettingsRepository import InMemorySettingsRepository
 from persistence.JsonFileSettingsRepository import JsonFileSettingsRepository
 
-from services.ApiService import ApiService
+from services.ResourceService import ResourceService
 from services.AuthenticationService import AuthenticationService
 from services.AccountService import AccountService
 from services.AccountSettingsService import AccountSettingsService
@@ -51,7 +51,7 @@ def main(argv):
 	sslService = SslService(sslSettingsService)	
 
 	AuthenticationService(app, accountService, key)	
-	ApiService(app, pageRepository) 
+	ResourceService(app, pageRepository) 
 	app.run("0.0.0.0", 8080, debug=True, ssl_context=sslService.getSslContext())
 
 if __name__ == "__main__":

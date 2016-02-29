@@ -8,7 +8,7 @@ from resources.HtmlResource import HtmlResource
 from resources.JavaScriptResource import JavaScriptResource
 from resources.CssResource import CssResource
 
-class ApiService(object):
+class ResourceService(object):
 	def __init__(self, app, pageRepository, api_only = False):
 		self.app = app
 		self.api = Api(app)
@@ -19,7 +19,7 @@ class ApiService(object):
 			self.__init_webpage()
 
 	def __init_api(self, pageRepository):
-		self.api.add_resource(PageResource, '/page/<path:route>',
+		self.api.add_resource(PageResource, '/pages/', '/pages/<path:route>',
 			resource_class_kwargs={'pageRepository': pageRepository})
 		self.api.add_resource(MediaResource, '/media/<path:route>')
 	
