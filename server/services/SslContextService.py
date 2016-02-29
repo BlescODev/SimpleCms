@@ -39,6 +39,7 @@ class SslContextService(object):
 		with open(keyPath, 'wb') as keyFile:
 			keyFile.write(crypto.dump_privatekey(crypto.FILETYPE_PEM, key))
 
+	@staticmethod
 	def readKeyFromFile( keyPath ):
 		with open(keyPath, 'rb') as keyFile:
 			return crypto.load_privatekey(crypto.FILETYPE_PEM, keyFile.read())
