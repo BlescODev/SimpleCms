@@ -13,5 +13,5 @@ class AuthenticationService(object):
 		return None
 
 	def identity(self, payload):
-		user_id = payload['identity']
-		self.accountService.get(user_id)
+		id = payload['identity']
+		return self.accountService.get(id)

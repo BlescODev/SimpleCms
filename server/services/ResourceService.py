@@ -21,7 +21,9 @@ class ResourceService(object):
 	def __init_api(self, pageRepository):
 		self.api.add_resource(PageResource, '/pages/', '/pages/<path:route>',
 			resource_class_kwargs={'pageRepository': pageRepository})
-		self.api.add_resource(MediaResource, '/media/', '/media/<path:route>')
+
+		self.api.add_resource(MediaResource, '/media/', '/media/<path:route>',
+			resource_class_kwargs={'source': "../media/"})
 	
 	def __init_webpage(self):
 		self.api.add_resource(ClientResource, '/',

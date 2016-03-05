@@ -1,5 +1,6 @@
 {
 	"hostName": "0.0.0.0",
+	"port": "8080",
 
 	"defaultUserName": "simpleAdmin",
 	"defaultUserPassword": "ThisIsAnInsecurePassword;ItMustBeReplaced123",

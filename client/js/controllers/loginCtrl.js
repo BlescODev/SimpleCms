@@ -55,9 +55,6 @@ app.controller('loginCtrl', ['appService', 'user', '$scope', function (appServic
                 message: "Please enter all information!"
             });
         }
-
-        // ThisIsAnInsecurePassword;ItMustBeReplaced
-
     };
 
     $scope.reset = function () {

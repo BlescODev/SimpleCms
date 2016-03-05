@@ -7,6 +7,12 @@ class AccountService(object):
 		self.users = list()
 		self.add(accountSettingsService.getDefaultAccount())
 
+	def get(self, id):
+		for user in self.users:
+			if user.id == id:
+				return user
+		return None
+
 	def getByName(self, name):		
 		for user in self.users:
 			if user.name == name:
@@ -16,9 +22,9 @@ class AccountService(object):
 	def add(self, user):
 		self.users.append(user)
 
-	def remove(self, user_id):
+	def remove(self, id):
 		for user in self.users:
-			if(user.id == user_id ):
+			if user.id == id:
 				self.users.remove(user)
 				return
 

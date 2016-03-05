@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="jsonToHtmlApp">
+<html ng-app="simpleCmsApp">
     <head>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
 
@@ -10,15 +10,20 @@
         <script src="js/libraries/satellizer-0.13.4/satellizer.min.js"></script>
         <script src="js/services/app.js"></script>
         <script src="js/services/notificationService.js"></script>
-        <script src="js/services/jsonService.js"></script>
+        <script src="js/services/pageService.js"></script>
         <script src="js/services/userService.js"></script>
         <script src="js/controllers/notificationCtrl.js"></script>
         <script src="js/controllers/headerCtrl.js"></script>
         <script src="js/controllers/contentCtrl.js"></script>
-        <script src="js/controllers/addPageCtrl.js"></script>
+        <script src="js/controllers/editPageCtrl.js"></script>
         <script src="js/controllers/loginCtrl.js"></script>
-
-        <title>SimpleCms</title>
+	<script type="text/ng-template" id="navigationTree">        
+        <a href="#/{{child.url}}">{{child.title}}</a>
+        <ul ng-if="child.children">
+            <li ng-repeat="child in child.children" ng-include="'navigationTree'">           
+            </li>
+        </ul>
+        </script>
     </head>
     <body>
         <div id="container">
@@ -39,25 +44,18 @@
                 <div id="header-inner">
                     <div id="navigation">
                         <ul>
-                            <li ng-repeat="navElement in navElements">
-                                <a href="#/{{navElement.url}}">{{navElement.title}}</a>
-                                <ul>
-                                    <li ng-repeat="subElement in navElement.sub">
-                                        <a href="#/{{navElement.url}}/{{subElement.url}}">{{subElement.title}}</a>
-                                    </li>
-                                </ul>
-                            </li>
+                            <li ng-repeat="child in navigation" ng-include="'navigationTree'"></li>
                             <li>
                                 <a>SimpleCms</a>
                                 <ul>
                                     <li ng-if="isAuthenticated()">
-                                        <a href="#/add-page">Edit Page</a>
+                                        <a href="#/edit{{route}}">Edit this Page</a>
                                     </li>
                                     <li ng-if="isAuthenticated()">
-                                        <a href="">Pages</a>
+                                        <a href="/pages/">Pages</a>
                                     </li>
                                     <li ng-if="isAuthenticated()">
-                                        <a href="#/add-page">Settings</a>
+                                        <a href="#/settings">Settings</a>
                                     </li>
                                     <li ng-if="!isAuthenticated()">
                                         <a href="#/login">Login</a>

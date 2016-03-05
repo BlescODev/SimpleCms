@@ -1,14 +1,15 @@
-var app = angular.module('jsonToHtmlApp', ['ngRoute', 'ngSanitize', 'ngAnimate', 'satellizer']);
+var app = angular.module('simpleCmsApp', ['ngRoute', 'ngSanitize', 'ngAnimate', 'satellizer']);
 
 app.config(['$routeProvider', '$authProvider', function ($routeProvider, $authProvider) {
 
     $authProvider.loginUrl = "/auth";
     $authProvider.tokenName = "access_token";
+    $authProvider.authToken = "JWT";
 
     $routeProvider
-        .when('/add-page', {
-            controller: 'addPageCtrl',
-            templateUrl: 'html/views/new-page.tpl.html',
+        .when('/edit', {
+            controller: 'editPageCtrl',
+            templateUrl: 'html/views/edit-page.tpl.html',
             resolve: {
                 auth: function ($q, $location, user) {
 
@@ -42,7 +43,8 @@ app.service('appService', ['$q', '$location', '$http', '$timeout', 'notification
 
     var properties = [];
     properties["location"] = "http://"+ $location.host() + ":" + $location.port() + "/";
-    properties["main"] = "/index";
+    properties["main"] = "/index.scms";
+    properties["navigation"] = "/navigation.scms";
 
     var httpRequest = function (method, url, data, success, error) {
 

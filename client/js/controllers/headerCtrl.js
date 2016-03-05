@@ -1,11 +1,11 @@
-app.controller('headerCtrl', ['appService', '$scope', 'jsonService', 'user', function (appService, $scope, jsonService, user) {
+app.controller('headerCtrl', ['appService', '$scope', 'pageService', 'user', function (appService, $scope, pageService, user) {
 
     //$scope.loginText = "Login";
     $scope.scrolled = false;
 
     var init = function () {
-        jsonService.getNavData().then(function (response) {
-            $scope.navElements = response.data;
+        pageService.get(appService.get('navigation').substr(1)).then(function (response) {
+            $scope.navigation = response.data.content;
         }, function (response) {
             appService.notifications.queue({
                 message: "Unable to retrieve navigation data!",

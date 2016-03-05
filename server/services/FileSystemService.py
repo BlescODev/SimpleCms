@@ -1,5 +1,6 @@
 from os import listdir
 from os.path import isfile, join, isdir
+from flask import send_from_directory, safe_join
 
 class FileSystemService(object):
 	@staticmethod
@@ -14,3 +15,19 @@ class FileSystemService(object):
 					for file in files_in_dir:
 						files.append(file[len(hide):])
 		return files
+
+	@staticmethod
+	def getFile(root, location):
+		return send_from_directory(root, location)
+	
+	@staticmethod
+	def saveFile(root, location, file):
+		file.save(saveJoin(root, location))
+
+	@staticmethod
+	def deleteFile(root,locattion):
+		 os.remove(saveJoin(root, location))
+
+	@staticmethod
+	def saveJoin(root, location):
+		return save_join(root, location)

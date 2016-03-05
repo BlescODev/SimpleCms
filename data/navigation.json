@@ -1,34 +1,37 @@
-[
-  {
-    "title": "Blesc",
-    "url": ""
-  },
-  {
-    "title": "Open Development",
-    "url": "open_development",
-    "sub": [
-      {
-        "title": "Simple Software",
-        "url": "open_development/simple_software",
-        "sub": [
-          {
-            "title": "SimpleCms",
-            "url": "open_development/simple_software/simple_cms"
-          }
-        ]
-      },
-      {
-        "title": "Soon",
-        "url": "soon"
-      },
-      {
-        "title": "Later",
-        "url": "soon"
-      }
-    ]
-  },
-  {
-    "title": "Soon",
-    "url": "random-page-name"
-  }
-]
+{
+  "id": "",
+  "route": "navigation.scms",
+  "title": "Navigation",
+  "navigation": [],
+  "content": [
+    {
+      "title": "SimpleCms Home",
+      "url": ""
+    },
+    {
+      "title": "Open Development",
+      "url": "open-development.scms",
+      "children": [
+        {
+          "title": "Simple Software",
+          "url": "open-development/simple-software.scms",
+          "children": [
+            {
+              "title": "SimpleCms",
+              "url": "open-development/simple-software/simple-cms.scms"
+            }
+          ]
+        },
+        {
+          "title": "Soon",
+          "url": "soon.scms"
+        },
+        {
+          "title": "Later",
+          "url": "later.scms"
+        }
+      ]
+    }
+  ],
+  "footer": []
+}

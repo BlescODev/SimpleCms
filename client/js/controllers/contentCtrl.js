@@ -1,4 +1,4 @@
-app.controller('contentCtrl', ['appService', 'jsonService', '$scope', function(appService, jsonService, $scope){
+app.controller('contentCtrl', ['appService', 'pageService', '$scope', function(appService, pageService, $scope){
 
     var init = function () {
         var url = appService.$location.url();
@@ -6,11 +6,11 @@ app.controller('contentCtrl', ['appService', 'jsonService', '$scope', function(a
         if (!url || url == '/') {
             url = appService.get('main');
         }
-	
-	    url = url.substr(1);
 
-        jsonService.getContent(url).then(function (response) {
-            $scope.posts = response.data;
+        url = url.substr(1);
+
+        pageService.get(url).then(function (response) {
+            $scope.page = response.data;
         }, function (response) {
             if(response.status == 404){
                 appService.$location.url('/404');
