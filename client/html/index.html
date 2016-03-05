@@ -8,15 +8,20 @@
         <script src="js/libraries/angular-1.4.7/angular-sanitize.min.js"></script>
         <script src="js/libraries/angular-1.4.7/angular-animate.min.js"></script>
         <script src="js/libraries/satellizer-0.13.4/satellizer.min.js"></script>
+
         <script src="js/services/app.js"></script>
         <script src="js/services/notificationService.js"></script>
         <script src="js/services/pageService.js"></script>
         <script src="js/services/userService.js"></script>
+
         <script src="js/controllers/notificationCtrl.js"></script>
         <script src="js/controllers/headerCtrl.js"></script>
         <script src="js/controllers/contentCtrl.js"></script>
         <script src="js/controllers/editPageCtrl.js"></script>
         <script src="js/controllers/loginCtrl.js"></script>
+
+        <script src="js/directives/layer.js"></script>	
+
 	<script type="text/ng-template" id="navigationTree">        
         <a href="#/{{child.url}}">{{child.title}}</a>
         <ul ng-if="child.children">
