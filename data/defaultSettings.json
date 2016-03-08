@@ -5,8 +5,8 @@
 	"defaultUserName": "simpleAdmin",
 	"defaultUserPassword": "ThisIsAnInsecurePassword;ItMustBeReplaced123",
 
-	"designCssDesignPath": "design/css/designs/simpleCms.css",
-	"designCssPatternPath": "design/css/patterns/dark.json",
+	"designCssDesignPath": "design/css/designs/minimal.css",
+	"designCssPatternPath": "design/css/patterns/light.json",
 
 	"passwordSecuritySaltSize": "16",
 	"passwordSecurityRounds": "29000",

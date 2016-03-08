@@ -6,6 +6,6 @@ class CssResource(Resource):
 		self.designService = designService
 
 	def get(self, route):
-		if route == "style.css":
+		if route == "style.css":		
 			return self.designService.getActiveCss()
 		return send_from_directory("../design/css/", route)

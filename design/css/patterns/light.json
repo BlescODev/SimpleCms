@@ -4,7 +4,7 @@
 	"fontSize": "20px",
 	"textAlign": "center",
 
-	"backgroundColor": "#E3E3E3",
+	"backgroundColor": "#E8E8E8",
 	"title": {
 		"fontFamily": "Verdana",
 		"fontColor": "#353535",
@@ -22,6 +22,31 @@
 		"fontColor": "#5050CC",
 		"fontSize": "20px",
 		"backgroundColor": "none"
+	},
+	"layer": {
+		"fontFamily": "Verdana",
+		"fontColor": "#353535",
+		"fontSize": "20px",
+		"backgroundColor": "#E3E3E3",
+		
+		"title": {
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "60px",
+			"backgroundColor": "#E3E3E3"
+		},
+		"text": {		
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		},
+		"link": {
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		}
 	},
 
 	"layerOne": {
