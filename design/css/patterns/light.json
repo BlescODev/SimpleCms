@@ -1,0 +1,104 @@
+{
+	"fontFamily": "Verdana, sans-serif",
+	"fontColor": "#353535",
+	"fontSize": "20px",
+	"textAlign": "center",
+
+	"backgroundColor": "#E3E3E3",
+	"title": {
+		"fontFamily": "Verdana",
+		"fontColor": "#353535",
+		"fontSize": "60px",
+		"backgroundColor": "#FFFFFF"
+	},
+	"text": {		
+		"fontFamily": "Verdana",
+		"fontColor": "#353535",
+		"fontSize": "30px",
+		"backgroundColor": "none"
+	},
+	"link": {
+		"fontFamily": "Verdana",
+		"fontColor": "#5050CC",
+		"fontSize": "20px",
+		"backgroundColor": "none"
+	},
+
+	"layerOne": {
+		"fontFamily": "Verdana",
+		"fontColor": "#353535",
+		"fontSize": "20px",
+		"backgroundColor": "#E3E3E3",
+		
+		"title": {
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "60px",
+			"backgroundColor": "#E3E3E3"
+		},
+		"text": {		
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		},
+		"link": {
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		}
+	},
+
+	"layerTwo": {	
+		"fontFamily": "Verdana",
+		"fontColor": "#353535",
+		"fontSize": "20px",
+		"backgroundColor": "#E3E3E3",
+
+		"title": {
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		},
+		"text": {		
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		},
+		"link": {
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		}
+	},
+
+	"layerThree": {	
+		"fontFamily": "Verdana",
+		"fontColor": "#353535",
+		"fontSize": "20px",
+		"backgroundColor": "#E3E3E3",
+
+		"title": {
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		},
+		"text": {		
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		},
+		"link": {
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		}
+	}
+}

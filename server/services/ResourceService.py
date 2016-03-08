@@ -9,14 +9,14 @@ from resources.JavaScriptResource import JavaScriptResource
 from resources.CssResource import CssResource
 
 class ResourceService(object):
-	def __init__(self, app, pageRepository, api_only = False):
+	def __init__(self, app, pageRepository, designService, api_only = False):
 		self.app = app
 		self.api = Api(app)
 
 		self.__init_api(pageRepository)
 
 		if not api_only:
-			self.__init_webpage()
+			self.__init_webpage(designService)
 
 	def __init_api(self, pageRepository):
 		self.api.add_resource(PageResource, '/pages/', '/pages/<path:route>',
@@ -25,9 +25,10 @@ class ResourceService(object):
 		self.api.add_resource(MediaResource, '/media/', '/media/<path:route>',
 			resource_class_kwargs={'source': "../media/"})
 	
-	def __init_webpage(self):
+	def __init_webpage(self, designService):
 		self.api.add_resource(ClientResource, '/',
 			resource_class_kwargs={'app': self.app})
 		self.api.add_resource(JavaScriptResource, '/js/<path:route>')
 		self.api.add_resource(HtmlResource, '/html/<path:route>')
-		self.api.add_resource(CssResource, '/css/<path:route>')
+		self.api.add_resource(CssResource, '/css/<path:route>',
+			resource_class_kwargs={'designService': designService})

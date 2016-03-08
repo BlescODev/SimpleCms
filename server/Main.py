@@ -16,6 +16,8 @@ from services.SettingsService import SettingsService
 from services.PasswordSettingsService import PasswordSettingsService
 from services.SslSettingsService import SslSettingsService
 from services.SslService import SslService
+from services.DesignSettingsService import DesignSettingsService
+from services.DesignService import DesignService
 
 import sys, getopt
 
@@ -37,6 +39,9 @@ def main(argv):
 
 	print("BLESC's SimpleCms")
 	app = Flask(__name__, static_folder='..')
+	import jinja2
+	loader = jinja2.FileSystemLoader("..")
+	app.jinja_loader = loader
 
 	defaultSettingsRepository = JsonFileSettingsRepository("defaultSettings.json")
 	settingsRepository = InMemorySettingsRepository()
@@ -46,12 +51,14 @@ def main(argv):
 	passwordSettingsService = PasswordSettingsService(settingsService)
 	accountSettingsService = AccountSettingsService(settingsService, passwordSettingsService)
 	sslSettingsService = SslSettingsService(settingsService)
+	designSettingsService = DesignSettingsService(settingsService)	
 
 	accountService = AccountService(accountSettingsService)
 	sslService = SslService(sslSettingsService)	
+	designService = DesignService(designSettingsService)
 
 	AuthenticationService(app, accountService, key)	
-	ResourceService(app, pageRepository) 
+	ResourceService(app, pageRepository, designService) 
 	app.run("0.0.0.0", 8080, debug=True, ssl_context=sslService.getSslContext())
 
 if __name__ == "__main__":
