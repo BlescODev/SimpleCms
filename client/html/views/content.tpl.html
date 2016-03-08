@@ -1,6 +1,4 @@
-<div id="page">
-    <div class="page animate-repeat" ng-repeat="content in page.content" ng-hide="post.title == ''">
-        <layer level="content.level" content="content"></layer>
-        <div class="clear"></div>
-    </div>
+<div class="animate-repeat" ng-repeat="content in page.content">
+	<scms-content layer="content.layer" content="content" />
+	<div class="clear"></div>
 </div>

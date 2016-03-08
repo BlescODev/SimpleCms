@@ -13,7 +13,7 @@
 	"passwordNeedsNumbers": "True",
 	"passwordNeedsSepcial": "True",
 
-	"sslIsEnabled": "True",
+	"sslIsEnabled": "False",
 	"sslDefaultKeyPath": "ssl/default.key",
 	"sslKeyPath": "ssl/simpleCms.key",
 	"sslKeySize": 2048,

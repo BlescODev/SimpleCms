@@ -9,7 +9,7 @@ app.config(['$routeProvider', '$authProvider', function ($routeProvider, $authPr
     $routeProvider
         .when('/edit', {
             controller: 'editPageCtrl',
-            templateUrl: 'html/views/edit-page.tpl.html',
+            templateUrl: 'html/views/edit-content.tpl.html',
             resolve: {
                 auth: function ($q, $location, user) {
 

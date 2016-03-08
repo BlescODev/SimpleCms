@@ -1,83 +1,38 @@
 <!DOCTYPE html>
 <html ng-app="simpleCmsApp">
-    <head>
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 
-        <script src="js/libraries/angular-1.4.7/angular.min.js"></script>
-        <script src="js/libraries/angular-1.4.7/angular-route.min.js"></script>
-        <script src="js/libraries/angular-1.4.7/angular-sanitize.min.js"></script>
-        <script src="js/libraries/angular-1.4.7/angular-animate.min.js"></script>
-        <script src="js/libraries/satellizer-0.13.4/satellizer.min.js"></script>
+		<script src="js/libraries/angular-1.4.7/angular.min.js"></script>
+		<script src="js/libraries/angular-1.4.7/angular-route.min.js"></script>
+		<script src="js/libraries/angular-1.4.7/angular-sanitize.min.js"></script>
+		<script src="js/libraries/angular-1.4.7/angular-animate.min.js"></script>
+		<script src="js/libraries/satellizer-0.13.4/satellizer.min.js"></script>
 
-        <script src="js/services/app.js"></script>
-        <script src="js/services/notificationService.js"></script>
-        <script src="js/services/pageService.js"></script>
-        <script src="js/services/userService.js"></script>
+		<script src="js/services/app.js"></script>
+		<script src="js/services/notificationService.js"></script>
+		<script src="js/services/pageService.js"></script>
+		<script src="js/services/userService.js"></script>
 
-        <script src="js/controllers/notificationCtrl.js"></script>
-        <script src="js/controllers/headerCtrl.js"></script>
-        <script src="js/controllers/contentCtrl.js"></script>
-        <script src="js/controllers/editPageCtrl.js"></script>
-        <script src="js/controllers/loginCtrl.js"></script>
+		<script src="js/controllers/notificationCtrl.js"></script>
+		<script src="js/controllers/navigationCtrl.js"></script>
+		<script src="js/controllers/contentCtrl.js"></script>
+		<script src="js/controllers/editPageCtrl.js"></script>
+		<script src="js/controllers/loginCtrl.js"></script>
 
-        <script src="js/directives/layer.js"></script>	
+		<script src="js/directives/scms-notification.js"></script>
+		<script src="js/directives/scms-navigation.js"></script>
+		<script src="js/directives/scms-content.js"></script>
+		<script src="js/directives/scms-content-edit.js"></script>
+	</head>
+	<body>
+		<div ng-controller="notificationCtrl" ng-class="{'visible': visible}">
+			<scms-notification class="notification" notificaton="notificaton"> </scms-notification>
+		</div>
+		<div ng-controller="navigationCtrl" ng-class="{'scrolled': scrolled}">
+			<scms-navigation class="navigation" navigation="navigation"></scms-navigation>
+		</div>
+		<div ng-view class="page"/>
 
-	<script type="text/ng-template" id="navigationTree">        
-        <a href="#/{{child.url}}">{{child.title}}</a>
-        <ul ng-if="child.children">
-            <li ng-repeat="child in child.children" ng-include="'navigationTree'">           
-            </li>
-        </ul>
-        </script>
-    </head>
-    <body>
-        <div id="container">
-            <div id="notifications" ng-controller="notificationCtrl" ng-class="{'visible': visible}">
-                <div class="notification {{current.type}}">
-                    <div class="notification-inner">
-
-                        <span ng-bind-html="current.message"></span>
-
-                        <div class="close-cross" ng-click="close()">
-                            <div class="cross-horizontal"></div>
-                            <div class="cross-vertical"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="header" ng-controller="headerCtrl" ng-class="{'scrolled': scrolled}">
-                <div id="header-inner">
-                    <div id="navigation">
-                        <ul>
-                            <li ng-repeat="child in navigation" ng-include="'navigationTree'"></li>
-                            <li>
-                                <a>SimpleCms</a>
-                                <ul>
-                                    <li ng-if="isAuthenticated()">
-                                        <a href="#/edit{{route}}">Edit this Page</a>
-                                    </li>
-                                    <li ng-if="isAuthenticated()">
-                                        <a href="/pages/">Pages</a>
-                                    </li>
-                                    <li ng-if="isAuthenticated()">
-                                        <a href="#/settings">Settings</a>
-                                    </li>
-                                    <li ng-if="!isAuthenticated()">
-                                        <a href="#/login">Login</a>
-                                    </li>
-                                    <li ng-if="isAuthenticated()">
-                                        <a ng-click="logout()">Logout</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </div>
-
-            <div ng-view id="view"></div>
-
-        </div>
-    </body>
+	</body>
 </html>

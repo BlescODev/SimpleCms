@@ -1,0 +1,34 @@
+<div class="l{{layer}}" ng-if="content != null" ng-hide="content == null" >
+	<div class="title">
+		{{content.title}}</div>
+	<div class="media" ng-repeat="media in content.media">
+		<div class="background">
+			<div ng-switch on="media.type">
+				<div ng-switch-when="image">
+					<img class="image" ng-src="{{media.source}}" alt="{{media.source}}"/>
+				</div>
+				<div ng-switch-when="video">
+					<video controls>
+						<source ng-src="{{media.source}}" />
+					</video>
+				</div>
+				<div ng-switch-when="html">
+					<div class="html" ng-bind-html="www.google.com"></div>
+				</div>
+				<div ng-switch-default>
+					Unknown media type.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="text" ng-bind-html="content.text" ng-hide="content.text == ''"></div>
+	<ul class="links">
+	<div ng-repeat="link in content.links" ng-hide="content.links.length == 0">
+		<li class=link>		
+			<a class="link" href="{{link.url}}">{{link.text}}</a>
+		</li>
+	</div>
+	</ul>
+	<div class="children" ng-repeat="child in content.children" ng-hide="content.children.length == 0">
+		<scms-content layer="child.layer" content="child"/></div>
+</div>

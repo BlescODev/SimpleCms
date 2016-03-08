@@ -1,0 +1,54 @@
+<div class="l{{layer}}" ng-if="content != null" ng-hide="content == null" >
+	<input type="text" class="title" placeholder="Title" title="Title" ng-model="content.title"/>
+	<div class="media" ng-repeat="media in content.media">
+		<div class="background">
+			<div ng-switch on="media.type">
+				<div ng-switch-when="image">
+					<img class="image" ng-src="{{media.source}}" alt="{{media.source}}"/>
+				</div>
+				<div ng-switch-when="video">
+					<video controls>
+						<source ng-src="{{media.source}}" />
+					</video>
+				</div>
+				<div ng-switch-when="html">
+					<iframe class="html" src="{{media.source}}">
+						Your browser does not support iframes.
+					</iframe>
+				</div>
+				<div ng-switch-default>
+					Unknown media type.
+				</div>
+			</div>
+			<input type="text" 
+				placeholder="Media source" 
+				title="Media source" 
+				update-on-enter ng-model="media.source"
+				ng-model-options="{ updateOn: 'blur' }"/>
+		</div>
+	</div>
+	<textarea placeholder="Text" class="text" title="Text" ng-model="content.text"></textarea>
+	<ul>
+		<div class="links" ng-repeat="link in content.links">	
+			<li class="link">
+				<input type="text" class="link"
+					palcaholder="Link text" title="link text" ng-model="link.text"/>
+				:
+				<input type="text" class="link"
+					placeholder="Link url" title="link url" ng-model="link.url"/>
+			</li>
+		</div>
+		<li class="link">
+			<from>			
+				<input type="text" class="link" 
+					placeholder="Link text" title="link text" ng-model="link.text"/>
+				:
+				<input type="text" class="link"
+					placeholder="Link url" title="link url" ng-model="link.url"/>
+			</from>
+		</li>
+	<ul>
+	<div class="children" ng-repeat="child in content.children" ng-hide="content.children.length == 0">
+		<scms-content-edit layer="child.layer" content="child"/>
+	</div>
+</div>

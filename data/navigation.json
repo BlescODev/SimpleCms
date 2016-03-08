@@ -6,29 +6,29 @@
   "content": [
     {
       "title": "SimpleCms Home",
-      "url": ""
+      "url": "#"
     },
     {
       "title": "Open Development",
-      "url": "open-development.scms",
+      "url": "#/open-development.scms",
       "children": [
         {
           "title": "Simple Software",
-          "url": "open-development/simple-software.scms",
+          "url": "#/open-development/simple-software.scms",
           "children": [
             {
               "title": "SimpleCms",
-              "url": "open-development/simple-software/simple-cms.scms"
+              "url": "#/open-development/simple-software/simple-cms.scms"
             }
           ]
         },
         {
           "title": "Soon",
-          "url": "soon.scms"
+          "url": "#/soon.scms"
         },
         {
           "title": "Later",
-          "url": "later.scms"
+          "url": "#/later.scms"
         }
       ]
     }
