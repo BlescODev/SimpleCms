@@ -18,7 +18,7 @@ class PageResource(Resource):
 		self.pageRepository.add(page)
 
 	@jwt_required()
-	def post(self, route):		
+	def post(self, route):
 		page = request.get_json(force=True)['page']
 		self.pageRepository.update(page)
 

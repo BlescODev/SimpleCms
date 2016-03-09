@@ -1,5 +1,6 @@
 from services.FileSystemService import FileSystemService
 from flask_restful import Resource
+from flask.globals import request
 from flask_jwt import jwt_required
 import json
 

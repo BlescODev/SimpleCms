@@ -18,6 +18,7 @@ from services.SslSettingsService import SslSettingsService
 from services.SslService import SslService
 from services.DesignSettingsService import DesignSettingsService
 from services.DesignService import DesignService
+from services.GeneralSettingsService import GeneralSettingsService
 
 import sys, getopt
 
@@ -51,15 +52,19 @@ def main(argv):
 	passwordSettingsService = PasswordSettingsService(settingsService)
 	accountSettingsService = AccountSettingsService(settingsService, passwordSettingsService)
 	sslSettingsService = SslSettingsService(settingsService)
-	designSettingsService = DesignSettingsService(settingsService)	
+	designSettingsService = DesignSettingsService(settingsService)
+	generalSettingsService = GeneralSettingsService(settingsService)
 
 	accountService = AccountService(accountSettingsService)
-	sslService = SslService(sslSettingsService)	
+	sslService = SslService(sslSettingsService)
 	designService = DesignService(designSettingsService)
 
 	AuthenticationService(app, accountService, key)	
-	ResourceService(app, pageRepository, designService) 
-	app.run("0.0.0.0", 8080, debug=True, ssl_context=sslService.getSslContext())
+	ResourceService(app, pageRepository, designService, generalSettingsService)
+	app.run(generalSettingsService.getHostName(), 
+			generalSettingsService.getPort(), 
+			debug=True, 
+			ssl_context=sslService.getSslContext())
 
 if __name__ == "__main__":
 	main(sys.argv[1:])
