@@ -3,8 +3,8 @@
 	"port": "8080",
 	"startPage": "index.scms",
 
-	"defaultUserName": "simpleAdmin",
-	"defaultUserPassword": "-ThisIsAnInsecurePassword;ItMustBeReplaced123",
+	"accountName": "simpleAdmin",
+	"accountPassword": "ThisIsAnInsecurePassword;ItMustBeReplaced123",
 
 	"designCssDesignPath": "design/css/designs/minimal.css",
 	"designCssPatternPath": "design/css/patterns/light.json",

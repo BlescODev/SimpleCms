@@ -4,29 +4,30 @@ from models.User import User
 
 class AccountService(object):
 	def __init__(self, accountSettingsService):
-		self.users = list()
-		self.add(accountSettingsService.getDefaultAccount())
+		self.accounts = list()
+		self.accountSettingsService = accountSettingsService
+		self.add(self.accountSettingsService.getAccount())
 
 	def get(self, id):
-		for user in self.users:
-			if user.id == id:
-				return user
+		for account in self.accounts:
+			if account.id == id:
+				return account
 		return None
 
 	def getByName(self, name):		
-		for user in self.users:
-			if user.name == name:
-				return user
+		for account in self.accounts:
+			if account.name == name:
+				return account
 		return None
 
-	def add(self, user):
-		self.users.append(user)
+	def add(self, account):
+		self.accounts.append(account)
 
 	def remove(self, id):
-		for user in self.users:
-			if user.id == id:
-				self.users.remove(user)
+		for account in self.accounts:
+			if account.id == id:
+				self.accounts.remove(account)
 				return
 
-	def update(self, user):
-		pass
+	def update(self, account):
+		self.accountSettingsService.setAccount(account)

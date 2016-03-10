@@ -13,5 +13,5 @@ class GeneralSettingsResource(Resource):
 
 	@jwt_required()
 	def post(self):
-		settings = request.get_json(force=True)['settings']
+		settings = request.get_json(force=True)
 		self.generalSettingsService.set(settings)

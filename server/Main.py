@@ -60,7 +60,8 @@ def main(argv):
 	designService = DesignService(designSettingsService)
 
 	AuthenticationService(app, accountService, key)	
-	ResourceService(app, pageRepository, designService, generalSettingsService)
+	ResourceService(app, pageRepository, designService, 
+		generalSettingsService, accountService, passwordSettingsService)
 	app.run(generalSettingsService.getHostName(), 
 			generalSettingsService.getPort(), 
 			debug=True, 
