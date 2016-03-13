@@ -24,6 +24,9 @@
 		<script src="js/directives/scms-navigation.js"></script>
 		<script src="js/directives/scms-content.js"></script>
 		<script src="js/directives/scms-content-edit.js"></script>
+		<script src="js/directives/scms-links-edit.js"></script>
+		<script src="js/directives/scms-media-edit.js"></script>
+		<script src="js/directives/scms-media-display.js"></script>
 	</head>
 	<body>
 		<div ng-controller="notificationCtrl" ng-class="{'visible': visible}">
@@ -32,7 +35,6 @@
 		<div ng-controller="navigationCtrl" ng-class="{'scrolled': scrolled}">
 			<scms-navigation class="navigation" navigation="navigation"></scms-navigation>
 		</div>
-		<div ng-view class="page"/>
-
+		<div ng-view class="page"></div>
 	</body>
 </html>

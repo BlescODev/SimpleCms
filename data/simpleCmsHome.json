@@ -2,21 +2,26 @@
 	"id": "",
 	"route": "index.scms",
 	"title": "SimpleCms",
-	"navigation": [],
-	"content": [{
-		"position": 1,
-		"layer": 1,
-		"title": "Welcome to your SimpleCms",
-		"text": "We thank you for considering Blesc's SimpleCms as your personal web content management tool. As the name suggests your new cms was developed to make it as easy as possible for you to use and customize it. We tried to design the user interface as self explanatory and straightforward as possible. Here are some informative links which will help you to get around.",
-		"media": [{
-			"type": "image",
-			"source": "/media/images/simpleCms.svg"
-		}],
-		"links": [{
-			"url": "#/Starter-guide.scms",
-			"text": "Starter guide"
-		}],
-		"children": []
-	}],
-	"footer": []
+	"navigation": {},
+	"content": {
+		"1": {
+			"layer": 1,
+			"title": "Welcome to your SimpleCms",
+			"text": "We thank you for considering Blesc's SimpleCms as your personal web content management tool. As the name suggests your new cms was developed to make it as easy as possible for you to use and customize it. We tried to design the user interface as self explanatory and straightforward as possible. Here are some informative links which will help you to get around.",
+			"media": {
+				"1": {
+					"type": "image",
+					"source": "/media/images/simpleCms.svg"
+				}
+			},
+			"links": {
+				"1": {
+					"url": "#/Starter-guide.scms",
+					"text": "Starter guide"
+				}
+			},
+			"children": {}
+		}
+	},
+	"footer": {}
 }

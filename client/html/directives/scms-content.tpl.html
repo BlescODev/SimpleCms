@@ -3,22 +3,7 @@
 		{{content.title}}</div>
 	<div class="media" ng-repeat="media in content.media">
 		<div class="background">
-			<div ng-switch on="media.type">
-				<div ng-switch-when="image">
-					<img class="image" ng-src="{{media.source}}" alt="{{media.source}}"/>
-				</div>
-				<div ng-switch-when="video">
-					<video controls>
-						<source ng-src="{{media.source}}" />
-					</video>
-				</div>
-				<div ng-switch-when="html">
-					<div class="html" ng-bind-html="www.google.com"></div>
-				</div>
-				<div ng-switch-default>
-					Unknown media type.
-				</div>
-			</div>
+			<scms-media-display media="media"></scms-media-diplay>
 		</div>
 	</div>
 	<div class="text" ng-bind-html="content.text" ng-hide="content.text == ''"></div>
