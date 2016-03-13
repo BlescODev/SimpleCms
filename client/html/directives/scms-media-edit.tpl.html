@@ -1,0 +1,30 @@
+<div class="media" ng-repeat="m in media">
+	<div class="background" ng-hide="m == null">
+		<scms-media-display media="m"></scms-media-display>
+		<div class="media-edit" >		
+			<input class="link" 
+				placeholder="Media type" 
+				ng-model="m.type"
+				ng-model-options="{ updateOn: 'blur' }"/>
+			:
+			<input class="link"
+				placeholder="Media source" 
+				ng-model="m.source"
+				ng-model-options="{ updateOn: 'blur' }"/>
+			<button ng-click="removeMedia($index)">remove</button>		
+		</div>
+	</div>
+</div>
+<div class="background">
+	<scms-media-display media="newMedia"></scms-media-display>
+	<input class="link" 
+		placeholder="Media type" 
+		ng-model="newMedia.type"
+		ng-model-options="{ updateOn: 'blur' }"/>
+	:
+	<input class="link"
+		placeholder="Media source" 
+		ng-model="newMedia.source"
+		ng-model-options="{ updateOn: 'blur' }"/>
+	<button ng-click="addMedia()">add</button>
+</div>

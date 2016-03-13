@@ -1,0 +1,18 @@
+<div ng-switch on="media.type">
+	<div ng-switch-when="image">
+		<img class="image" ng-src="{{media.source}}" alt="{{media.source}}"/>
+	</div>
+	<div ng-switch-when="video">
+		<video controls>
+			<source ng-src="{{media.source}}" />
+		</video>
+	</div>
+	<div ng-switch-when="html">
+		<iframe class="html" src="{{media.source}}">
+			Your browser does not support iframes.
+		</iframe>
+	</div>
+	<div ng-switch-default>
+		Unknown media type.
+	</div>
+</div>
