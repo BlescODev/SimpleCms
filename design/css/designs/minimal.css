@@ -72,8 +72,8 @@
 	width: 100%;
 	height: 100%;
 }
-.media .background {
-	width: 100%;
+.media-item {
+	min-height: 250px;
 }
 .image {}
 .video {}
@@ -98,4 +98,45 @@
 /* LAYER THREE */
 .l3 .title {
 	font-size: {{style.layerTwo.title.fontSize}};
+}
+
+/* CMS DESIGN */
+.media-options {
+	display: none;
+	float: left;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+}
+
+.media-item:hover .media-options {
+	display: initial;
+}
+
+.media-edit {
+	display: none;
+	float: left;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+}
+
+.link-options {
+	display: none;
+	float: left;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+}
+
+.link-edit {
+	display: none;
+	float: left;
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+}
+
+.link:hover .link-options {
+	display: initial;
 }

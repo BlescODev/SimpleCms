@@ -1,20 +1,35 @@
 <ul>
 	<div class="links" ng-repeat="link in links">	
-		<li class="link">
-			<input type="text" class="link"
-				palcaholder="Link text" title="link text" ng-model="link.text"/>
-			:
-			<input type="text" class="link"
-				placeholder="Link url" title="link url" ng-model="link.url"/>
-			<button ng-click="removeLink($index)">remove</button>
+		<li>
+			<div class="link">
+				<a class="ng-binding" ng-source="link.url">{{link.text}}</a>
+				<div class="link-options">	
+					<button ng-click="editLink($index)">edit</button>
+					<button ng-click="removeLink($index)">remove</button>
+				</div>
+				<div id="link-edit-{{$index}}" class="link-edit">
+					<input type="text" class="link"
+						palcaholder="Link text" ng-model="link.text"/>
+					:
+					<input type="text" class="link"
+						placeholder="Link url" ng-model="link.url"/>
+					<button ng-click="updateLink($index)">save</button>
+				</div>
+			</div>
 		</li>
 	</div>
-	<li class="link">		
-		<input type="text" class="link" 
-			placeholder="Link text" title="link text" ng-model="link.text"/>
-		:
-		<input type="text" class="link"
-			placeholder="Link url" title="link url" ng-model="link.url"/>
-		<button ng-click="addLink()">add</button>
+	<li class="link">	
+		<div class="link-options" style="display: initial;">	
+			<button ng-click="addLink($index)">add link</button>
+		</div>
+		<div id="link-edit" class="link-edit">
+			<input type="text" class="link"
+				placeholder="Link text" ng-model="link.text"/>
+			:
+			<input type="text" class="link"
+				placeholder="Link url" ng-model="link.url"/>
+			<button ng-click="saveLink()">save</button>
+			<button ng-click="cancelLink()">cancel</button>
+		</div>
 	</li>
 <ul>
