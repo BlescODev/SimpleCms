@@ -1,7 +1,7 @@
 <div class="l l{{layer}}" ng-if="content != null" ng-hide="content == null" >
-	<input type="text" class="title" placeholder="Title" title="Title" ng-model="content.title"/>
+	<input type="text" class="title" placeholder="Title" ng-model="content.title"/>
 	<scms-media-edit media="content.media" ></scms-media-edit>
-	<textarea class="text" ng-model="content.text"></textarea>
+	<textarea id="ta" class="text" ng-model="content.text" ng-change="resize()"></textarea>
 	<scms-links-edit links="content.links"></scms-links-edit>
 	<div class="children" ng-repeat="child in content.children" ng-hide="content.children.length == 0">
 		<scms-content-edit layer="child.layer" content="child"/>
