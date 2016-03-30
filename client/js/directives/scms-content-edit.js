@@ -9,13 +9,7 @@ app.directive('scmsContentEdit', function($compile) {
 		compile: function(tElement) {
 			var contents = tElement.contents().remove();
 			return {
-				pre: function(scope) {
-					scope.resize = function() {
-						var ta = document.getElementById("ta");
-						ta.style.height = 'auto';
-						ta.style.height = ta.scrollHeight + 'px';
-					}
-				},
+				pre: function(scope) {},
 				post: function(scope, iElement) {
 					$compile(contents)(scope, function(clone) {
 						iElement.append(clone);
