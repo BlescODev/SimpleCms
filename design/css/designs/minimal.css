@@ -1,3 +1,10 @@
+/* 
+	DESIGN:	minimal
+	BY:	blesc
+
+*/
+
+
 .clear {
   clear: both;
 }
@@ -17,11 +24,28 @@
 	min-width: 900px;
 	max-width: 1200px;
 }
-.navigation {
-	list-style: none;
-	max-height: 100px;
+
+navigation {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
 }
 
+navigation li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+/*
 .l {
 	margin-top: 5%;
 	margin-bottom: 5%;
@@ -33,7 +57,7 @@
 
 	background-color: {{style.layer.backgroundColor}};
 }
-
+*/
 .l1 {}
 .l2 {}
 .l3 {}

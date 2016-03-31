@@ -34,7 +34,8 @@
 			<scms-notification class="notification" notificaton="notificaton"> </scms-notification>
 		</div>
 		<div ng-controller="navigationCtrl" ng-class="{'scrolled': scrolled}">
-			<scms-navigation class="navigation" navigation="navigation"></scms-navigation>
+			<scms-navigation class="navigation" 
+				navigation="nav.concat(isAuthenticated() ? inNav : outNav)"></scms-navigation>
 		</div>
 		<div ng-view class="page"></div>
 	</body>

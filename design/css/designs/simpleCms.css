@@ -1,3 +1,9 @@
+/* 
+	DESIGN:	simpleCms
+	BY:	blesc
+
+*/
+
 .clear {
   clear: both;
 }
@@ -18,6 +24,7 @@
 	max-width: 1200px;
 }
 .navigation {
+	display: inline;
 	list-style: none;
 	max-height: 100px;
 }
