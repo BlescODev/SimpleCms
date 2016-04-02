@@ -3,9 +3,10 @@ app.controller('navigationCtrl', ['appService', '$scope', 'pageService', 'user',
 
 	$scope.scrolled = false;
 
-	$scope.nav = [];
+	$scope.inNav = [];
+	$scope.outNav = [];
 
-	$scope.inNav = [{
+	var inNav = [{
 			"title": "SimpleCms",
 			"url": "",
 			"children": [{
@@ -17,7 +18,7 @@ app.controller('navigationCtrl', ['appService', '$scope', 'pageService', 'user',
 			}]
 		}];
 
-	$scope.outNav = [{
+	var outNav = [{
 			"title": "SimpleCms",
 			"url": "",
 			"children": [{
@@ -31,7 +32,8 @@ app.controller('navigationCtrl', ['appService', '$scope', 'pageService', 'user',
 	var init = function() {
 		navigation = appService.get('navigation').substr(1)
 		pageService.get(navigation).then(function(response) {
-			$scope.nav = response.data.content; 
+			$scope.inNav = response.data.content.concat(inNav);
+			$scope.outNav = response.data.content.concat(outNav); 
 		}, function(response) {
 			appService.notifications.queue({
 				message: "Unable to retrieve navigation data!",
@@ -56,28 +58,3 @@ app.controller('navigationCtrl', ['appService', '$scope', 'pageService', 'user',
 		appService.$location.url("/login")
 	};
 }]);
-
-/*
-
-<li>
-<a>SimpleCms</a>
-<ul>
-<li ng-if="isAuthenticated()">
-<a href="#/edit{{route}}">Edit this Page</a>
-</li>
-<li ng-if="isAuthenticated()">
-<a href="/pages/">Pages</a>
-</li>
-<li ng-if="isAuthenticated()">
-<a href="#/settings">Settings</a>
-</li>
-<li ng-if="!isAuthenticated()">
-<a href="#/login">Login</a>
-</li>
-<li ng-if="isAuthenticated()">
-<a ng-click="logout()">Logout</a>
-</li>
-</ul>
-</li>
-
-*/

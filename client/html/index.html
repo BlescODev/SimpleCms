@@ -17,8 +17,9 @@
 		<script src="js/controllers/notificationCtrl.js"></script>
 		<script src="js/controllers/navigationCtrl.js"></script>
 		<script src="js/controllers/contentCtrl.js"></script>
-		<script src="js/controllers/editPageCtrl.js"></script>
 		<script src="js/controllers/loginCtrl.js"></script>
+		<script src="js/controllers/editPageCtrl.js"></script>
+		<script src="js/controllers/settingsCtrl.js"></script>
 
 		<script src="js/directives/scms-notification.js"></script>
 		<script src="js/directives/scms-navigation.js"></script>
@@ -35,7 +36,7 @@
 		</div>
 		<div ng-controller="navigationCtrl" ng-class="{'scrolled': scrolled}">
 			<scms-navigation class="navigation" 
-				navigation="nav.concat(isAuthenticated() ? inNav : outNav)"></scms-navigation>
+				navigation="isAuthenticated() ? inNav : outNav"></scms-navigation>
 		</div>
 		<div ng-view class="page"></div>
 	</body>

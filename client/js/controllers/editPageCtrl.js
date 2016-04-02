@@ -1,14 +1,9 @@
-app.controller('editPageCtrl', ['appService', 'pageService', '$scope', function(appService, pageService, $scope) {
+app.controller('editPageCtrl', ['appService', 'pageService', '$scope', '$routeParams',
+		function(appService, pageService, $scope, $routeParams) {
 
 	var init = function() {
-		url = getUrl();
-		if (url === '') {
-			url = appService.get('main');
-		}
-
-		url = url.substr(1)
-
-		pageService.get(url).then(function(response) {
+		console.log($routeParams);
+		pageService.get($routeParams.page).then(function(response) {
 			$scope.page = response.data;
 		}, function(response) {
 			if (response.status == 500) {
@@ -60,16 +55,6 @@ app.controller('editPageCtrl', ['appService', 'pageService', '$scope', function(
 				}
 			});
 		}
-	};
-
-	var getUrl = function() {
-		var url = appService.$location.url();
-
-		url = url.substr(5);
-		if (!url) {
-			return ''
-		}
-		return url.substr(1);
 	};
 	appService.ready(init);
 }]);
