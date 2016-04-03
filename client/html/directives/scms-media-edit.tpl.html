@@ -23,7 +23,7 @@
 </div>
 <div class="background">
 	<div class="media-item">
-		<scms-media-display media="newMedia"></scms-media-display>
+		<scms-media-display media="newMedia" ng-hide="newMedia.type == ''"></scms-media-display>
 		<div class="media-options" style="display: initial;">
 			<button ng-click="addMedia()">add media</button>
 		</div>

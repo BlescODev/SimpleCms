@@ -22,13 +22,15 @@ app.config(['$routeProvider', '$authProvider', function($routeProvider, $authPro
 			controller: 'editPageCtrl',
 			templateUrl: 'html/views/edit-content.tpl.html',
 		})
-		.when('/settings', {
+		.when('/setting', {
 			controller: 'settingsCtrl',
 			templateUrl: 'html/views/settings.tpl.html'
 		})
 		.when('/settings/:setting*', {
 			controller: 'settingsCtrl',
-			templateUrl: 'html/views/settings.tpl.html'
+			templateUrl: function(urlattr){
+				return 'html/views/' + urlattr.setting + 'Settings.tpl.html';
+			},
 		})
 		.when('/', {
 			controller: 'contentCtrl',

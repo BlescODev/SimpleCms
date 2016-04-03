@@ -9,7 +9,7 @@
   clear: both;
 }
 
-* {
+html {
 	margin: 0;
 	padding: 0;
 	position: relative;
@@ -164,3 +164,85 @@ li a:hover {
 .link:hover .link-options {
 	display: initial;
 }
+
+/*
+html {
+	margin: auto;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: auto;
+	width: 100%;
+	height: 100%;
+}
+
+.navigation {
+	background-color: #89F;
+	height: 60px;
+	width: 100%;
+}
+
+.settingsBar {
+	background-color: #45C;
+	float: left;
+	width: 33%;
+	height: 100%;
+}
+
+.layer-preview {
+	background-color: #67F;
+	width: 80%;
+	height: 20%;
+	margin: 10%;
+}
+
+.edit {
+	background-color: #6F7;
+	width: 67%;
+	height: 100%;
+	
+	margin-left: 33%;
+}
+
+.header {
+	text-align: center;
+	background-color: #50DD60;
+	height: 5%;
+}
+
+.header input {
+	text-align: center;
+	background-color: #6D7;
+	border-color: #4C5;
+	margin-top: 3px;
+	margin-right: 10px;
+	width: 22%;
+	height: 80%;
+}
+
+.page {
+	background-color: #4C5;
+	
+	width: 50%;
+	height: 90%;
+	
+	margin-left: 20%;
+}
+
+.footer {
+	background-color: #50DD60;
+	height: 5%;
+}
+
+.footer button {
+	background-color: #6D7;
+	border-color: #4C5;
+	float: right;
+	margin-top: 3px;
+	margin-right: 10px;
+	width: 14%;
+	height: 80%;
+}
+*/

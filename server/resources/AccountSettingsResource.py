@@ -21,6 +21,9 @@ class AccountSettingsResource(Resource):
 		newPassword = settings["newPassword"]
 		if current_identity.password.verify(oldPassword):
 			current_identity.name = settings["name"]
+			errors = self.passwordSettingsService.getPasswordPolicy().validate(newPassword)
+			if len(errors) > 0:
+				return errors, 403
 			current_identity.password = Password( newPassword, self.passwordSettingsService )
 			self.accountService.update(current_identity)
 		else:

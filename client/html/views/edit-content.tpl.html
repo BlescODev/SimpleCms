@@ -1,14 +1,29 @@
-<div id="url">
-	<input type="text" placeholder="Route" title="Route" ng-model="page.route"/></div>
-<div id="title">
-	<input type="text" placeholder="Titel" title="Titel" ng-model="page.title"/></div>
+<!--
+<div class="settingsBar">
+	<div class="layer-preview" draggable="true">
+		L1
+	</div>
+	<div class="layer-preview" draggable="true">
+		L2
+	</div>
+	<div class="layer-preview" draggable="true">
+		L3
+	</div>
+</div>
+<div class="edit">
+-->
+	<div id="url">
+		<input type="text" placeholder="Route" title="Route" ng-model="page.route"/></div>
+	<div id="title">
+		<input type="text" placeholder="Titel" title="Titel" ng-model="page.title"/></div>
 
-<div class="animate-repeat" ng-repeat="content in page.content">
-	<scms-content-edit layer="content.layer" content="content" />
-	<div class="clear"></div>
-</div>
-<div id="toolbar">
-	<button id="save" ng-click="save()">Speichern</button>
-	<button id="delete" ng-click="delete()">L&ouml;schen</button>
-	<div class="clear"></div>
-</div>
+	<div class="animate-repeat" ng-repeat="content in page.content">
+		<scms-content-edit layer="content.layer" content="content" />
+		<div class="clear"></div>
+	</div>
+	<div id="toolbar">
+		<button id="save" ng-click="save()">Speichern</button>
+		<button id="delete" ng-click="delete()">L&ouml;schen</button>
+		<div class="clear"></div>
+	</div>
+<!--</div>-->

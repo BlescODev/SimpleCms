@@ -19,7 +19,7 @@ app.service('pageService', ['appService', '$http', '$q', function(appService, $h
         });
     };
 
-    var update = function (contentName, promise) {
+    var update = function (page, promise) {
         appService.http("POST", appService.get("location") + 'pages/' + page.route, page, function (response) {
             promise.resolve(response);
         }, function (response) {
@@ -27,7 +27,7 @@ app.service('pageService', ['appService', '$http', '$q', function(appService, $h
         });
     };
 
-    var remove = function (contentName, promise) {
+    var remove = function (page, promise) {
         appService.http("DELETE", appService.get("location") + 'pages/' + page.route, {}, function (response) {
             promise.resolve(response);
         }, function (response) {
@@ -37,22 +37,22 @@ app.service('pageService', ['appService', '$http', '$q', function(appService, $h
     return {
         add: function (page) {
             contentPromise = $q.defer();
-            add(contentName, contentPromise);
+            add(page, contentPromise);
             return contentPromise.promise;
         },
-        get: function (contentName) {
+        get: function (page) {
             contentPromise = $q.defer();
-            get(contentName, contentPromise);
+            get(page, contentPromise);
             return contentPromise.promise;
         },
-        update: function (contentName) {
+        update: function (page) {
             contentPromise = $q.defer();
-            update(contentName, contentPromise);
+            update(page, contentPromise);
             return contentPromise.promise;
         },
-        remove: function (contentName) {
+        remove: function (page) {
             contentPromise = $q.defer();
-            remove(contentName, contentPromise);
+            remove(page, contentPromise);
             return contentPromise.promise;
         }
 	

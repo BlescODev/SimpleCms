@@ -1,13 +1,13 @@
 {
 	"fontFamily": "Verdana, sans-serif",
-	"fontColor": "black",
+	"fontColor": "#353535",
 	"fontSize": "20px",
-	"textAlign": "center",
+	"textAlign": "initial",
 
-	"backgroundColor": "#959595",
+	"backgroundColor": "#535353",
 	"title": {
 		"fontFamily": "Verdana",
-		"fontColor": "#00000",
+		"fontColor": "#353535",
 		"fontSize": "60px",
 		"backgroundColor": "#FFFFFF"
 	},
@@ -19,9 +19,34 @@
 	},
 	"link": {
 		"fontFamily": "Verdana",
-		"fontColor": "#5050CC",
+		"fontColor": "#535353",
 		"fontSize": "20px",
 		"backgroundColor": "none"
+	},
+	"layer": {
+		"fontFamily": "Verdana",
+		"fontColor": "#353535",
+		"fontSize": "20px",
+		"backgroundColor": "#858585",
+		
+		"title": {
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "60px",
+			"backgroundColor": "#E3E3E3"
+		},
+		"text": {		
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		},
+		"link": {
+			"fontFamily": "Verdana",
+			"fontColor": "#353535",
+			"fontSize": "20px",
+			"backgroundColor": "#E3E3E3"
+		}
 	},
 
 	"layerOne": {

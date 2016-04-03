@@ -8,7 +8,7 @@
   clear: both;
 }
 
-* {
+html {
 	margin: 0;
 	padding: 0;
 	position: relative;
@@ -44,6 +44,7 @@
 .title {
 	background: none;	
 	border: none;
+	
 
 	font-size: {{style.title.fontSize}};
 	color: {{style.title.fontColor}};

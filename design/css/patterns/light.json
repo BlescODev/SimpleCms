@@ -2,7 +2,7 @@
 	"fontFamily": "Verdana, sans-serif",
 	"fontColor": "#353535",
 	"fontSize": "20px",
-	"textAlign": "center",
+	"textAlign": "initial",
 
 	"backgroundColor": "#E8E8E8",
 	"title": {

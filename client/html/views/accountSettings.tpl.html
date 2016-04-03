@@ -1,0 +1,14 @@
+<div id="settings">
+	<h1>Account Settings</h1>
+	<p style="color: red;" ng-repeat="error in errors">{{error}}</p>
+	<h2>Name</h2>
+	<p>The name of the main account.</p>
+	<input type="text" ng-model="settings.name"/>
+	<h2>Change password</h2>
+	<p>Enter the new password.</p>
+	<input type="password" ng-model="settings.newPassword"/>
+	<h2>Current password</h2>
+	<p>If you want to make changes please provide your curretn password so we can verify its really you.</p>
+	<input type="password" ng-model="settings.oldPassword"/><br/>
+	<button id="save" ng-click="save()">Speichern</button>
+</div>
