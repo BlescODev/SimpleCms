@@ -1,8 +1,7 @@
-from flask_restful import Resource
 from uuid import uuid4 as uuid
 import json
 
-class InMemoryPageRepository(Resource):
+class InMemoryPageRepository():
 	def __init__(self):
 		self.pages = list()
 		self.add(json.load(open("../data/navigation.json", 'r')))

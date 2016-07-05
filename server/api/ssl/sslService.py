@@ -2,8 +2,6 @@ from os.path import isfile
 import ssl
 import random
 
-from services.SslContextService import SslContextService
-
 class SslService(object):
 	def __init__(self, sslSettingsService):
 		self.sslSettingsService = sslSettingsService

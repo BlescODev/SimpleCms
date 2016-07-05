@@ -1,7 +1,6 @@
-from policies.PasswordPolicy import PasswordPolicy
-from policies.SecurityPolicy import SecurityPolicy
-
 from distutils.util import strtobool as toBool
+
+from .passwordPolicy import PasswordPolicy
 
 class PasswordSettingsService(object):
 	def __init__(self, settingsService):

@@ -1,6 +1,5 @@
 from distutils.util import strtobool as toBool
 
-from services.SslContextService import SslContextService
 
 class SslSettingsService(object):
 	def __init__(self, settingsService):

@@ -1,5 +1,5 @@
-from models.User import User
-from models.Password import Password
+from .user import User
+from .password import Password
 
 class AccountSettingsService(object):
 	def __init__(self, settingsService, passwordSettingsService):

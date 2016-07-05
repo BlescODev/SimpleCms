@@ -1,7 +1,6 @@
 from flask_restful import Resource
 from flask.globals import request
 from flask_jwt import jwt_required, current_identity
-from models.Password import Password
 import json
 
 class AccountSettingsResource(Resource):

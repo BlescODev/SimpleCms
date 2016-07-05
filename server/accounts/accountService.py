@@ -1,7 +1,5 @@
 from werkzeug.security import safe_str_cmp
 
-from models.User import User
-
 class AccountService(object):
 	def __init__(self, accountSettingsService):
 		self.accounts = list()

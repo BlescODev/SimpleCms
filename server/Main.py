@@ -1,26 +1,15 @@
 import os
+import sys, getopt
 from uuid import uuid4
+
 from flask import Flask
 from flask_restful import Api
 
-#from persistence.SqlitePageRepository import SqlitePageRepository
-from persistence.InMemoryPageRepository import InMemoryPageRepository
-from persistence.InMemorySettingsRepository import InMemorySettingsRepository
-from persistence.JsonFileSettingsRepository import JsonFileSettingsRepository
-
-from services.ResourceService import ResourceService
-from services.AuthenticationService import AuthenticationService
-from services.AccountService import AccountService
-from services.AccountSettingsService import AccountSettingsService
-from services.SettingsService import SettingsService
-from services.PasswordSettingsService import PasswordSettingsService
-from services.SslSettingsService import SslSettingsService
-from services.SslService import SslService
-from services.DesignSettingsService import DesignSettingsService
-from services.DesignService import DesignService
-from services.GeneralSettingsService import GeneralSettingsService
-
-import sys, getopt
+from api import *
+from webclient import *
+from settings import *
+from filesystem import *
+from accounts import *
 
 def main(argv):
 	key = ''
@@ -46,7 +35,7 @@ def main(argv):
 
 	defaultSettingsRepository = JsonFileSettingsRepository("defaultSettings.json")
 	settingsRepository = InMemorySettingsRepository()
-	pageRepository = InMemoryPageRepository()# SqlitePageRepository("../data/content.db")	
+	pageRepository = InMemoryPageRepository() # SqlitePageRepository("../data/content.db")	
 
 	settingsService = SettingsService(defaultSettingsRepository, settingsRepository)
 	passwordSettingsService = PasswordSettingsService(settingsService)
@@ -60,8 +49,14 @@ def main(argv):
 	designService = DesignService(designSettingsService)
 
 	AuthenticationService(app, accountService, key)	
-	ResourceService(app, pageRepository, designService, 
-		generalSettingsService, accountService, passwordSettingsService)
+	
+	api = Api(app)
+	
+	ApiResourceService(app, api, pageRepository, 
+		generalSettingsService, accountService, passwordSettingsService).start()
+	
+	WebClientResourceService(app, api, designService).start()
+	
 	app.run(generalSettingsService.getHostName(), 
 			generalSettingsService.getPort(), 
 			debug=True, 
