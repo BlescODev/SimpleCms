@@ -1,8 +1,6 @@
-<div ng-repeat="child in navigation">
+<li ng-repeat="child in navigation">
 	<a class="link" href="{{child.url}}">{{child.title}}</a>
-	<ul>
-		<li>
+	<ul ng-hide="child.children.length < 1">
 		<scms-navigation navigation="child.children" />
-		</li>
 	</ul>
-</div>
+</li>

@@ -19,14 +19,31 @@ html {
 }
 .page {
 	margin: auto;
-
 	min-width: 900px;
 	max-width: 1200px;
 }
-.navigation {
-	display: inline;
-	list-style: none;
-	max-height: 100px;
+
+nav {
+	background-color: #ddd;
+	box-shadow: 2px 2px 4px rgba(0,0,0,.1);
+}
+
+nav il, ul {
+	list-style-type: none;
+}
+
+nav > ul > scms-navigation > li {  
+	display: inline-block;
+	padding: 5px;
+	vertical-align: top;
+}
+
+nav li, ul {
+    padding-left: 0;
+}
+
+nav > ul > scms-navigation > li > ul > scms-navigation > li > ul {
+    float:right;
 }
 
 .l {
@@ -36,6 +53,8 @@ html {
 	padding: 5% 5% 5% 5%;
 
 	background-color: {{style.layer.backgroundColor}};
+	
+	box-shadow: 2px 2px 4px rgba(0,0,0,.1);
 }
 
 .l1 {}
@@ -45,6 +64,7 @@ html {
 	background: none;	
 	border: none;
 	
+	text-align: center;
 
 	font-size: {{style.title.fontSize}};
 	color: {{style.title.fontColor}};
@@ -68,7 +88,6 @@ html {
 	
 	font-size: {{style.link.fontSize}};
 	color: {{style.link.fontColor}};
-	
 }
 .media {
 	background: none;	
