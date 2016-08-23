@@ -1,13 +1,28 @@
-<div id="settings">
-	<h1>General Settings</h1>
-	<h2>Host name</h2>
-	<p>The name under which your website is accessable. Could look like this "www.blesc.ch".</p>
-	<input type="text" ng-model="settings.hostName"/>
-	<h2>Port</h2>
-	<p>The port trough which your website is accessed. Usually '80'.</p>
-	<input type="number" min="0" max="65536" steps="1" ng-model="settings.port"/>
-	<h2>Start page</h2>
-	<p>The page first page.</p>
-	<input type="text" ng-model="settings.startPage"/><br/>
+<div id="settings" class="l l1">
+	<h1 class="title">General Settings</h1>
+	<ul class="errors">
+		<li ng-repeat="error in errors">
+			<p class="error text">{{error}}</p>
+		</li>
+	</ul>
+	
+	<div class="l l2">
+		<h1 class="title">Host name</h1>
+		<p class="text">The name under which your website is accessable. Could look like this "www.blesc.ch".</p>
+		<input type="text" ng-model="settings.hostName"/>
+	</div>
+	
+	<div class="l l2">
+		<h1 class="title">Port</h1>
+		<p class="text">The port trough which your website is accessed. Usually '80'.</p>
+		<input type="number" min="0" max="65536" steps="1" ng-model="settings.port"/>
+	</div>
+		
+	<div class="l l2">
+		<h1 class="title">Start page</h1>
+		<p class="text">The page first page.</p>
+		<input type="text" ng-model="settings.startPage"/><br/>
+	</div>
+	
 	<button id="save" ng-click="save()">Speichern</button>
 </div>

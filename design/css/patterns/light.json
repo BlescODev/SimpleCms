@@ -79,12 +79,12 @@
 		"fontFamily": "Verdana",
 		"fontColor": "#353535",
 		"fontSize": "20px",
-		"backgroundColor": "#E3E3E3",
+		"backgroundColor": "#E9E9E9",
 
 		"title": {
 			"fontFamily": "Verdana",
 			"fontColor": "#353535",
-			"fontSize": "20px",
+			"fontSize": "40px",
 			"backgroundColor": "#E3E3E3"
 		},
 		"text": {		
@@ -110,7 +110,7 @@
 		"title": {
 			"fontFamily": "Verdana",
 			"fontColor": "#353535",
-			"fontSize": "20px",
+			"fontSize": "30px",
 			"backgroundColor": "#E3E3E3"
 		},
 		"text": {		

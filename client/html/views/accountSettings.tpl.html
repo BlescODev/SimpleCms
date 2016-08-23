@@ -1,14 +1,23 @@
-<div id="settings">
-	<h1>Account Settings</h1>
-	<p style="color: red;" ng-repeat="error in errors">{{error}}</p>
-	<h2>Name</h2>
-	<p>The name of the main account.</p>
-	<input type="text" ng-model="settings.name"/>
-	<h2>Change password</h2>
-	<p>Enter the new password.</p>
-	<input type="password" ng-model="settings.newPassword"/>
-	<h2>Current password</h2>
-	<p>If you want to make changes please provide your curretn password so we can verify its really you.</p>
-	<input type="password" ng-model="settings.oldPassword"/><br/>
+<div id="settings" class="l l1">
+	<h1 class="title">Account Settings</h1>
+	<ul class="errors">
+		<li class="error text" ng-repeat="error in errors">{{error}}</li>
+	</ul>
+	
+	<div class="l l2">
+		<h1 class="title">Name</h1>
+		<p class="text">The name of the main account.</p>
+		<input type="text" ng-model="settings.name"/>
+	</div>
+	<div class="l l2">
+		<h1 class="title">Change password</h1>
+		<p class="text">Enter the new password.</p>
+		<input type="password" ng-model="settings.newPassword"/>
+	</div>
+	<div class="l l2">
+		<h1 class="title">Current password</h1>
+		<p class="text">If you want to make changes please provide your curretn password so we can verify its really you.</p>
+		<input type="password" ng-model="settings.oldPassword"/><br/>
+	</div>
 	<button id="save" ng-click="save()">Speichern</button>
 </div>
